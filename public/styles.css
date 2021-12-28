@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252A;
 }
 
 li, a, button {
@@ -15,6 +14,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 10;
+    background-color: #24252A;
+}
+
+.main-background {
+    background-color: #24252A;
+    height: 30cm;
 }
 
 .logo {
@@ -51,13 +56,12 @@ button:hover {
     background-color: rgba(0, 136, 169, 0.8);
 }
 
-.topbar-container {
+.main-title {
     padding: 1rem;
-    
     text-align: center;
 }
 
-.topbar-container h1{
+.main-title h1{
     background-color: rgb(116, 142, 58);
     border-radius: 50px;
     padding: 1rem;
@@ -74,4 +78,66 @@ button:hover {
     transform: translate(-50%, -50%);
 }
 
+.center-vertical {
+    margin-left: 8%
+}
 
+.activity-table {
+    width: 40%;
+    float: left;
+}
+
+.activity-info {
+    width: 60%;
+    float: right;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 5px 5px ;
+    background-color: rgb(116, 142, 58);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    color: #FFFFFF;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.activity-info p {
+    color: white;
+    font-size: large;
+}
+
+.activity-info p1 {
+    color: white;
+    font-size: medium;
+}
+
+.detailed-info {
+    background-color: rgb(116, 142, 58);
+    border-radius: 5px 5px 5px 5px ;
+    margin-right: 8%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 12px 15px;
+}
