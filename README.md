@@ -6,4 +6,4 @@
 - docker compose up
 - localhost:3000/start
 - Je zou onderstaand resultaat moeten hebben:
-![Alt text](Readme_images/Dashboard.jpg?raw=true "Dashboard")
+![Alt text](Readme_images/Dashboard.JPG?raw=true "Dashboard")
