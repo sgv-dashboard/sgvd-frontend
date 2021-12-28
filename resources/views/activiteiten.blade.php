@@ -23,7 +23,7 @@
                 </tbody>
             </table>
         </div>
-        <button type="button" onclick="getMapAndData()"> Tijdelijke knop om data te laden</button>
+        <button type="button" onclick="getData()"> Tijdelijke knop om data te laden</button>
     </div>
     <div class="activity-info">
         <div class="detailed-info">
@@ -48,10 +48,12 @@
         </div>
         <div class="detailed-info">
             <p> Weerbericht </p>
-            <p> ...</p>
-            <p> ...</p>
-            <p> ...</p>
-            <p> ...</p>
+            <p1 id="plaats"> </p1>
+            <p1 id="temperatuur"> </p1>
+            <p1 id="gevoelstemperatuur"> </p1>
+            <p1 id="windrichting"> </p1>
+            <p1 id="windkmh"> </p1>
+            <p1 id="samenvatting"> </p1>
         </div>
     </div>
 </div>
