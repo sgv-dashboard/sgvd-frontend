@@ -3,7 +3,7 @@
 - Knoppen met routes naar de controller en view
 - Layout van de activiteiten pagina
 - Implementatie van routebeschrijving via Heroku (kaart weergeven is nog niet gelukt)
-- Implementatie van het weerbericht, afbeelding van het weer moet nog bekeken worden.
+- Implementatie van het weerbericht
 
 ### Testen:
 - docker compose up
