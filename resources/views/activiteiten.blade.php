@@ -44,7 +44,7 @@
             <p> Routebeschrijving </p>
             <p1 id="distance"></p1>
             <p1 id="duration"></p1>
-            <iframe id="map" width="620" height="400"></iframe>
+            <iframe id="map" srcdoc="" width="620" height="400"></iframe>
         </div>
         <div class="detailed-info">
             <p> Weerbericht </p>

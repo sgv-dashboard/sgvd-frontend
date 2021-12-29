@@ -1,5 +1,4 @@
 
-
 //Dummy function to test methods
 function getData(){
     getMapAndData();
@@ -22,7 +21,7 @@ function setMapDurationDistance(json_data) {
     document.getElementById("duration").innerHTML = "De routebeschrijving duurt " + json_data["duration"] + " minuten.";
     document.getElementById("distance").innerHTML = "De activiteit is " + json_data["distance"] + " kilometer hier vandaan.";
     //Het is nog niet gelukt om de kaart weer te geven.
-    //document.getElementById("htmlcode").innerHTML = json_data["html_map"];
+    document.getElementById("map").srcdoc = json_data["html_map"];
 }
 
 //REST: GET weather data (using my API key: 06c8cc719b)

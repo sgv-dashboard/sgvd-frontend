@@ -2,8 +2,8 @@
 - Layout van de verschillende pagina's
 - Knoppen met routes naar de controller en view
 - Layout van de activiteiten pagina
-- Implementatie van routebeschrijving via Heroku (kaart weergeven is nog niet gelukt)
-- Implementatie van het weerbericht
+- Implementatie van routebeschrijving via Heroku
+- Implementatie van het weerbericht (http://weerlive.nl/delen.php)
 
 ### Testen:
 - docker compose up
