@@ -4,7 +4,8 @@
 - Layout van de activiteiten pagina
 - Implementatie van routebeschrijving via Heroku
 - Implementatie van het weerbericht
-- Contact pagina 
+- Contact pagina
+- Facebook feed
 
 ### Gebruikte websites:
 - Routebeschrijving: https://openrouteservice.org/

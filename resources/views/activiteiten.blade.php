@@ -1,7 +1,6 @@
 @extends('master')
 @section('content')
 <div class="main-background">
-<div class="activity-container">
     <div class="activity-table">
         <div class="center-vertical">
             <table class="content-table">
@@ -56,7 +55,6 @@
             <p1 id="samenvatting"> </p1>
         </div>
     </div>
-</div>
 </div>
 
 
