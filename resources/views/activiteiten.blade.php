@@ -1,6 +1,9 @@
 @extends('master')
 @section('content')
 <div class="main-background">
+    <div class="main-title start-page-margin">
+            <h1 style = "color:white;" > Klik op een activiteit voor meer info</h1>
+    </div>
     <div class="activity-table">
         <div class="center-vertical">
             <table class="content-table">

@@ -19,7 +19,7 @@ header {
 
 .main-background {
     background-color: #24252A;
-    height: 20cm;
+    height: 30cm;
 }
 
 .logo {
@@ -59,6 +59,7 @@ button:hover {
 .main-title {
     padding: 1rem;
     text-align: center;
+    width: auto;
 }
 
 .main-title h1{
@@ -67,6 +68,7 @@ button:hover {
     padding: 1rem;
     margin: 0;
     position: relative;
+    font-size: 25;
 }
 
 .center {
@@ -164,5 +166,5 @@ button:hover {
 }
 
 .center-facebook {
-    margin-left: 35%;
+    margin-left: 33%;
 }

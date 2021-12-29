@@ -1,6 +1,9 @@
 @extends('master')
 @section('content')
 <div class="main-background">
+    <div class="main-title start-page-margin">
+            <h1 style = "color:white;" > Contacteer ons voor feedback</h1>
+    </div>
     <form action="https://formsubmit.co/siemen.vandervoort@student.uhasselt.be" method="POST" class="center">
         <input class="below" type="email" name="E-mail" placeholder="E-mail adres" required></input>
         <input class="below" type="text" name="Naam" placeholder="Naam" required></input>
