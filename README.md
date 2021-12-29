@@ -3,7 +3,13 @@
 - Knoppen met routes naar de controller en view
 - Layout van de activiteiten pagina
 - Implementatie van routebeschrijving via Heroku
-- Implementatie van het weerbericht (http://weerlive.nl/delen.php)
+- Implementatie van het weerbericht
+- Contact pagina 
+
+### Gebruikte websites:
+- Routebeschrijving: https://openrouteservice.org/
+- Weerbericht: http://weerlive.nl/delen.php
+- Contact e-mail: https://formsubmit.co/
 
 ### Testen:
 - docker compose up

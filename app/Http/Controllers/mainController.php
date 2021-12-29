@@ -30,4 +30,8 @@ class mainController extends controller{
     public function contact(){
         return view('contact');
     }
+
+    public function thankyou(){
+        return view('thankyou');
+    }
 }
