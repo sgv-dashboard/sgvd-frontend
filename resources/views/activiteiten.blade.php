@@ -1,9 +1,5 @@
 @extends('master')
 
-@section('javascipt')
-<script type="text/javascript" src="js/activities.js"></script>
-@endsection
-
 @section('content')
 <div class="main-background">
     <div class="main-title start-page-margin">
@@ -30,22 +26,14 @@
                 </tbody>
             </table>
         </div>
-        <button type="button" onclick="getData()"> Tijdelijke knop om data te laden</button>
     </div>
     <div class="activity-info">
         <div class="detailed-info">
-            <p> Info over de activiteit</p>
-            <p> ...</p>
-            <p> ...</p>
-            <p> ...</p>
-            <p> ...</p>
-        </div>
-        <div class="detailed-info">
-            <p> Inschrijven </p>
-            <p> ...</p>
-            <p> ...</p>
-            <p> ...</p>
-            <p> ...</p>
+            <p class="activity-title" id="activity-title" />
+            <p class="activity-date" id="activity-date" />
+            <p class="activity-time" id="activity-time" />
+            <p class="activity-group" id="activity-group" />
+            <p class="activity-description" id="activity-description" />
         </div>
         <div class="detailed-info">
             <p> Routebeschrijving </p>
@@ -62,7 +50,6 @@
             <p1 id="samenvatting"> </p1>
         </div>
     </div>
+    <script type="text/javascript" src="js/activities.js"></script>
 </div>
-
-
 @endsection

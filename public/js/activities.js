@@ -1,7 +1,25 @@
 window.onload = loadActivity(0);
 
 function loadActivity(activityId){
+    getActivityInfo(activityId);
+    // TODO: pass activity location to handleLocationUpdate
     navigator.geolocation.getCurrentPosition(handleLocationUpdate, err => alert(err));
+}
+
+function getActivityInfo(id){
+    var origin = window.location.origin;
+    fetch(`${origin}/api/activity/${id}`)
+        .then(response => response.json())
+        .then(activity_json => {
+            activity_json = activity_json[0];
+            console.log(activity_json);
+            document.getElementById("activity-title").innerHTML = `Activiteit: ${activity_json["title"]}`;
+            document.getElementById("activity-date").innerHTML = `datum: ${activity_json["date"]}`;
+            document.getElementById("activity-time").innerHTML = `tijd: ${activity_json["time"]}`;
+            document.getElementById("activity-group").innerHTML = `groep: ${activity_json["group"]}`;
+            document.getElementById("activity-description").innerHTML = `${activity_json["description"]}`;
+        })
+        .catch(err => alert(err));
 }
 
 // SOURCE: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
