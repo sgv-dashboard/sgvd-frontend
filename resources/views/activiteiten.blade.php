@@ -1,8 +1,13 @@
 @extends('master')
+
+@section('javascipt')
+<script type="text/javascript" src="js/activities.js"></script>
+@endsection
+
 @section('content')
 <div class="main-background">
     <div class="main-title start-page-margin">
-            <h1 style = "color:white;" > Klik op een activiteit voor meer info</h1>
+        <h1 style="color:white;"> Klik op een activiteit voor meer info</h1>
     </div>
     <div class="activity-table">
         <div class="center-vertical">
@@ -50,7 +55,6 @@
         </div>
         <div class="detailed-info">
             <p> Weerbericht </p>
-            <p1 id="plaats"> </p1>
             <p1 id="temperatuur"> </p1>
             <p1 id="gevoelstemperatuur"> </p1>
             <p1 id="windrichting"> </p1>
