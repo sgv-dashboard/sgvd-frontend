@@ -1,3 +1,6 @@
+### Wat werkt er niet?
+- Single Sign On heeft nog geen database voor de users in op te slaan!
+
 ### Nieuwe functies:
 - Layout van de verschillende pagina's
 - Knoppen met routes naar de controller en view
@@ -6,6 +9,7 @@
 - Implementatie van het weerbericht
 - Contact pagina
 - Facebook feed
+- Single Sign On met Github (still work in progress!)
 
 ### Gebruikte websites:
 - Routebeschrijving: https://openrouteservice.org/
@@ -24,3 +28,6 @@
 - In case of a "TypeError: Failed to fetch"-error, the access to fetch data has been blocked by CORS policy because there is no "Access-Control-Allow-Origin" header present on the requested resource. Install the Chrome App "Allow CORS" https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf. After reloading the page, the fetch works again.
 
     => should be solved by enabling CORS in maps api!
+
+- In case of this error: lcobucci/jwt 4.1.5 requires ext-sodium * -> it is missing from your system. Install or enable PHP's sodium extension.
+Search for you php.ini file by executing 'php --init' in your terminal. Go to this file, open it, and add 'extension=php_sodium.dll'.

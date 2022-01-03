@@ -23,3 +23,6 @@ Route::get('/activiteiten', [mainController::class, 'activiteiten']);
 Route::get('/over', [mainController::class, 'over']);
 Route::get('/contact', [mainController::class, 'contact']);
 Route::get('/thankyou', [mainController::class, 'thankyou']);
+
+Route::get('/sign-in/github', [mainController::class, 'github']);
+Route::get('/sign-in/github/redirect', [mainController::class, 'githubRedirect']);

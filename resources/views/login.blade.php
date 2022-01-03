@@ -2,9 +2,13 @@
 @section('content')
 <div class="main-background">
     <div class="main-title">
-        <div class="center">
-            <h1 style = "color:white;" > Hier komt de login pagina</h1>
-        </div>
+        <a href="#" class="login-btn"> Sign in with Google </a>
+    </div>
+    <div class="main-title">
+        <a href="#" class="login-btn"> Sign in with Facebook </a>
+    </div>
+    <div class="main-title">
+        <a href="/sign-in/github" class="login-btn"> Sign in with Github </a>
     </div>
 </div>
 
