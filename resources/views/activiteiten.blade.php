@@ -24,7 +24,10 @@
         <div class="detailed-info">
             <p class="activity-title" id="activity-title" />
             <p class="activity-date" id="activity-date" />
-            <p class="activity-time" id="activity-time" />
+            <div style="display:flex; flex-direction: row;">
+                <p class="activity-time" id="activity-time"></p>
+                <img class="day-night-icon" id="day-night-indicator">
+            </div>
             <p class="activity-group" id="activity-group" />
             <p class="activity-description" id="activity-description" />
         </div>
