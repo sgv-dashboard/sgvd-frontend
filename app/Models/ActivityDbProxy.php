@@ -36,9 +36,23 @@ class ActivityDbProxy extends Model
     {
         $client = $this->getSoapClient();
         $params = array();
-        $response = $client->__soapcall('getActivities', $params);
+        $response = $client->__soapcall('getActivities', array($params));
 
         return array("activities" => $response->getActivitiesResult->Activity);
+    }
+
+    /**
+     * Get a list of activities since a specified date
+     * 
+     * @return array
+     */
+    public function getActivitiesSince($date)
+    {
+        $client = $this->getSoapClient();
+        $params = array("date" => $date);
+        $response = $client->__soapcall('getActivitiesFromDate', array($params));
+
+        return array("activities" => $response->getActivitiesFromDateResult->Activity);
     }
 
     /**
@@ -48,6 +62,6 @@ class ActivityDbProxy extends Model
      */
     private function getSoapClient()
     {
-        return new SoapClient(config('soap.url'));
+        return new SoapClient(config('soap.url'), array('cache_wsdl' => WSDL_CACHE_NONE));
     }
 }

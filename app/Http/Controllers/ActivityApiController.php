@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 use App\Models\ActivityDbProxy;
+use DateTime;
 
 class ActivityApiController extends Controller
 {
@@ -35,6 +36,18 @@ class ActivityApiController extends Controller
         $db = new ActivityDbProxy();
         $activities = $db->getActivities();
 
+        return $activities;
+    }
+
+    /**
+     * Get a list of upcoming activities
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function getUpcomingActivities()
+    {
+        $db = new ActivityDbProxy();
+        $activities = $db->getActivitiesSince(date("Y-m-d"));
         return $activities;
     }
 }
