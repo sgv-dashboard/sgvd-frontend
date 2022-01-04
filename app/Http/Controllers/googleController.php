@@ -38,7 +38,9 @@ class googleController extends controller{
             }
 
             Auth::loginUsingId($saveUser->id);
-            
+
+            //dd($saveUser); 
+
             return redirect('/start');
 
         } catch (\Throuwable $th) {
