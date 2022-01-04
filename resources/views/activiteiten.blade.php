@@ -12,17 +12,10 @@
                     <tr>
                         <th>Datum</th>
                         <th>Activiteit</th>
+                        <th>Tak</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>6/12/2021</td>
-                        <td>Sinterklaas</td>
-                    </tr>
-                    <tr>
-                        <td>1/5/2021</td>
-                        <td>Eetdag</td>
-                    </tr>
+                <tbody id="activity-list-table">
                 </tbody>
             </table>
         </div>
@@ -50,6 +43,7 @@
             <p1 id="samenvatting"> </p1>
         </div>
     </div>
+    <script type="text/javascript" src="https://stevenlevithan.com/assets/misc/date.format.js"></script>
     <script type="text/javascript" src="js/activities.js"></script>
 </div>
 @endsection

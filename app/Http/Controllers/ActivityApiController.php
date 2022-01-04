@@ -18,21 +18,23 @@ class ActivityApiController extends Controller
      */
     public function getActivityFromId($id)
     {
-        // TODO: fetch from soap db
+        // Fetch from soap db
         $db = new ActivityDbProxy();
         $activity = $db->getActivityFromId($id);
 
-        /*
-        $dateTime = strtotime("2022-04-12T14:30:00");
-        $activity = array([
-            "id" => 0,
-            "title" => "Zwemmen",
-            "date" => date('d/m/Y', $dateTime),
-            "time" => date('H\ui', $dateTime),
-            "group" => "kapoenen",
-            "description" => "Hopelijk is het warm weer",
-        ]);
-        */
         return $activity;
+    }
+
+    /**
+     * Get a list of activities
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function getActivities()
+    {
+        $db = new ActivityDbProxy();
+        $activities = $db->getActivities();
+
+        return $activities;
     }
 }

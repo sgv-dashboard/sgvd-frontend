@@ -21,29 +21,24 @@ class ActivityDbProxy extends Model
     public function getActivityFromId($id)
     {
         $client = $this->getSoapClient();
-        $params = array("id" => $id,);
+        $params = array("id" => $id);
         $response = $client->__soapcall('getActivityFromId', array($params));
 
-        return $this->soapResponseToActivity($response, 'getActivityFromId');
+        return array("activity" => $response->getActivityFromIdResult);
     }
 
     /**
-     * Convert response to activity array
+     * Get a list of activities
      * 
      * @return array
      */
-    private function soapResponseToActivity($response, $soapMethod)
+    public function getActivities()
     {
-        $dateTime = strtotime($response->{$soapMethod . 'Result'}->dateTime);
-        $activity = array([
-            "id" => $response->{$soapMethod . 'Result'}->id,
-            "title" => $response->{$soapMethod . 'Result'}->title,
-            "date" => date('d/m/Y', $dateTime),
-            "time" => date('H\ui', $dateTime),
-            "group" => $response->{$soapMethod . 'Result'}->group,
-            "description" => $response->{$soapMethod . 'Result'}->description,
-        ]);
-        return $activity;
+        $client = $this->getSoapClient();
+        $params = array();
+        $response = $client->__soapcall('getActivities', $params);
+
+        return array("activities" => $response->getActivitiesResult->Activity);
     }
 
     /**

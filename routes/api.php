@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/activity/{id}', [ActivityApiController::class, "getActivityFromId"]);
+
+Route::get('/activity', [ActivityApiController::class, "getActivities"]);
