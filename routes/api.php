@@ -28,3 +28,4 @@ Route::get('/activity/{id}', [ActivityApiController::class, "getActivityFromId"]
 // Sunset api
 Route::get('/sun/sunset/{date}/{lat}/{lon}', [SunsetController::class, "getSunset"]);
 Route::get('/sun/sunrise/{date}/{lat}/{lon}', [SunsetController::class, "getSunrise"]);
+Route::get('/sun/day/{date}/{lat}/{lon}', [SunsetController::class, "isDay"]);

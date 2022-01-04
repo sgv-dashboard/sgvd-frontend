@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SunsetProxy;
+use DateTime;
 
 class SunsetController extends Controller
 {
@@ -35,5 +36,23 @@ class SunsetController extends Controller
     {
         $sunrise = (new SunsetProxy())->getSunrise($date, $lat, $lon);
         return $sunrise;
+    }
+
+    /**
+     * Determine if it is day at a certain location & time
+     * 
+     * @return bool day
+     */
+    public function isDay($dateTime, $lat, $lon)
+    {
+        $dateTime = strtotime($dateTime);
+        $date = date('Y-m-d', $dateTime);
+        $sunrise = strtotime((new SunsetProxy())->getSunrise($date, $lat, $lon)->datetime);
+        $sunset = strtotime((new SunsetProxy())->getSunset($date, $lat, $lon)->datetime);
+        if ($sunrise <= $dateTime && $dateTime <= $sunset) {
+            return array("day" => true);
+        } else {
+            return array("day" => false);
+        }
     }
 }
