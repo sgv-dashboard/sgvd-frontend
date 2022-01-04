@@ -2,13 +2,9 @@
 @section('content')
 <div class="main-background">
     <div class="main-title">
-        <a href="#" class="login-btn"> Sign in with Google </a>
-    </div>
-    <div class="main-title">
-        <a href="#" class="login-btn"> Sign in with Facebook </a>
-    </div>
-    <div class="main-title">
-        <a href="/sign-in/github" class="login-btn"> Sign in with Github </a>
+        <a href="/login/google" class="btn btn-google btn-user btn-block">
+            <i class="fab fa-google fa-fw"></i> Login with Google
+        </a>
     </div>
 </div>
 

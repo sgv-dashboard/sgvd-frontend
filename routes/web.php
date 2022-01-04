@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mainController;
+use App\Http\Controllers\googleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,5 +25,5 @@ Route::get('/over', [mainController::class, 'over']);
 Route::get('/contact', [mainController::class, 'contact']);
 Route::get('/thankyou', [mainController::class, 'thankyou']);
 
-Route::get('/sign-in/github', [mainController::class, 'github']);
-Route::get('/sign-in/github/redirect', [mainController::class, 'githubRedirect']);
+Route::get('/login/google', [googleController::class, 'loginWithGoogle'])->name('login');
+Route::get('/googleLogin/redirect', [googleController::class, 'redirectFromGoogle'])->name('redirect');
