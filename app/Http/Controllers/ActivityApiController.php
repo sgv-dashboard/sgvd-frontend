@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+use App\Models\ActivityDbProxy;
+
 class ActivityApiController extends Controller
 {
     /**
@@ -17,7 +19,10 @@ class ActivityApiController extends Controller
     public function getActivityFromId($id)
     {
         // TODO: fetch from soap db
+        $db = new ActivityDbProxy();
+        $activity = $db->getActivityFromId($id);
 
+        /*
         $dateTime = strtotime("2022-04-12T14:30:00");
         $activity = array([
             "id" => 0,
@@ -27,6 +32,7 @@ class ActivityApiController extends Controller
             "group" => "kapoenen",
             "description" => "Hopelijk is het warm weer",
         ]);
+        */
         return $activity;
     }
 }
