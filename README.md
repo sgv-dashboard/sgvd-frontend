@@ -17,8 +17,8 @@
 - Contact e-mail: https://formsubmit.co/
 
 ### Testen:
-- docker compose up
-- localhost:3000/start
+- php artisan serve (Docker compose up werkt bij mij niet meer)
+- localhost:8000/start (localhost:3000/start indien Docker werkt)
 - Je zou onderstaand resultaat moeten hebben:
 ![Alt text](Readme_images/Dashboard.JPG?raw=true "Dashboard")
 - Bij activiteiten zou je onderstaand resultaat moeten hebben:
