@@ -47,4 +47,9 @@ class googleController extends controller{
             throw $th;
         }
     }
+
+    public function logOut(){
+        Auth::logout();
+        return redirect('/start');
+    }
 }

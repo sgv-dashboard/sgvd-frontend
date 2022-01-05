@@ -27,3 +27,4 @@ Route::get('/thankyou', [mainController::class, 'thankyou']);
 
 Route::get('/googleLogin', [googleController::class, 'loginWithGoogle']);
 Route::get('/googleLogin/redirect', [googleController::class, 'redirectFromGoogle']);
+Route::get('/googleLogOut', [googleController::class, 'logOut']);
