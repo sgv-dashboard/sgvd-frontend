@@ -19,7 +19,15 @@ class mainController extends controller{
  
     
     public function start(){
-        return view('main');
+        if(Auth::check()){
+            $current_user = auth()->user();
+            return view('main')->with("user", $current_user);
+        }
+        else {
+            $fakeUser = new user();
+            $fakeUser->name = "niet ingelogd";
+            return view('main')->with("user", $fakeUser);
+        }
     }
 
     public function login(){

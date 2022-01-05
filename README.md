@@ -1,6 +1,3 @@
-### Wat werkt er niet?
-- Single Sign On heeft nog geen database voor de users in op te slaan!
-
 ### Nieuwe functies:
 - Layout van de verschillende pagina's
 - Knoppen met routes naar de controller en view
@@ -9,7 +6,10 @@
 - Implementatie van het weerbericht
 - Contact pagina
 - Facebook feed
-- Single Sign On met Github (still work in progress!)
+- Single Sign On Google + redirections
+
+### Wat werkt er niet:
+- Docker omgeving
 
 ### Gebruikte websites:
 - Routebeschrijving: https://openrouteservice.org/
