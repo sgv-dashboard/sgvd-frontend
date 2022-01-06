@@ -15,9 +15,7 @@ use App\Http\Controllers\facebookController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 
 Route::get('/start', [mainController::class, 'start']);
 Route::get('/login', [mainController::class, 'login']);
