@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mainController;
 use App\Http\Controllers\googleController;
+use App\Http\Controllers\facebookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,7 @@ Route::get('/thankyou', [mainController::class, 'thankyou']);
 Route::get('/googleLogin', [googleController::class, 'loginWithGoogle']);
 Route::get('/googleLogin/redirect', [googleController::class, 'redirectFromGoogle']);
 Route::get('/googleLogOut', [googleController::class, 'logOut']);
+
+Route::get('/facebookLogin', [facebookController::class, 'loginWithFacebook']);
+Route::get('/facebookLogin/redirect', [facebookController::class, 'redirectFromFacebook']);
+Route::get('/facebookLogOut', [facebookController::class, 'logOut']);

@@ -10,22 +10,22 @@ use Auth;
 use Hash;
 use Str;
 
-class googleController extends controller{
+class facebookController extends controller{
     
-    public function loginWithGoogle(){
-        return Socialite::driver('google')->redirect();
+    public function loginWithFacebook(){
+        return Socialite::driver('facebook')->redirect();
     }
     /*
     //Gebruik deze functie als je jezelf wilt toevoegen aan de database
-    public function redirectFromGoogle(){
+    public function redirectFromFacebook(){
         try {
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('facebook')->user();
 
             $is_user = User::where('email', $user->getEmail())->first();
             if(!$is_user){
 
                 $saveUser = User::updateOrCreate([
-                    'google_id' => $user->getId(),
+                    'facebook_id' => $user->getId(),
                 ],[
                     'name' => $user->getName(),
                     'email' => $user->getEmail(),
@@ -33,7 +33,7 @@ class googleController extends controller{
                 ]);
             }else{
                 $saveUser = User::where('email',  $user->getEmail())->update([
-                    'google_id' => $user->getId(),
+                    'facebook_id' => $user->getId(),
                 ]);
                 $saveUser = User::where('email', $user->getEmail())->first();
             }
@@ -47,18 +47,18 @@ class googleController extends controller{
         }
     }
     */
-    
+
     //Gebruik deze functie als je alleen al eerder ingelogde gebruikers wilt laten inloggen
-    public function redirectFromGoogle(){
+    public function redirectFromFacebook(){
         try {
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('facebook')->user();
 
             $is_user = User::where('email', $user->getEmail())->first();
             if(!$is_user){
                 return redirect('/start');                
             }else{
                 $saveUser = User::where('email',  $user->getEmail())->update([
-                    'google_id' => $user->getId(),
+                    'facebook_id' => $user->getId(),
                 ]);
                 $saveUser = User::where('email', $user->getEmail())->first();
             }

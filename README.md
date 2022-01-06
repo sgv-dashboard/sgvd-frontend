@@ -7,6 +7,7 @@
 - Contact pagina
 - Facebook feed
 - Single Sign On Google + redirections
+- Single Sign On Facebook + redirections
 
 ### Wat werkt er niet:
 - Docker omgeving
@@ -31,3 +32,7 @@
 
 - In case of this error: lcobucci/jwt 4.1.5 requires ext-sodium * -> it is missing from your system. Install or enable PHP's sodium extension.
 Search for you php.ini file by executing 'php --init' in your terminal. Go to this file, open it, and add 'extension=php_sodium.dll'.
+
+- Vergeet de xampp niet op te zetten, database zou beschikbaar moeten zijn op localhost:88/phpmyadmin. Indien je een foutmelding krijg dat de database niet gevonden is maak je deze aan: 'sgv-dashboard' en voer je de migraties uit met 'php artisan migrate'.
+
+- Je bent ingelogd als je naam links boven staat. Indien je niet ingelogd geraakt ga je naar de googleController of facebookController en haal je de juiste functie uit comment.
