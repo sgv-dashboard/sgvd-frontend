@@ -48,10 +48,6 @@ class mainController extends controller{
         }
     }
 
-    public function over(){
-        return view('over');
-    }
-
     public function contact(){
         return view('contact');
     }
