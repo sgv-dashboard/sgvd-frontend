@@ -8,6 +8,7 @@
 - Facebook feed
 - Single Sign On Google + redirections
 - Single Sign On Facebook + redirections
+- Merge van de activiteiten database
 
 ### Wat werkt er niet:
 - Docker omgeving
