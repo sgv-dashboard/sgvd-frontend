@@ -15,11 +15,11 @@
             <ul class="nav__links">
                 <li><a href="/start"> Start </a></li>
                 <li><a href="/login"> Login </a></li>
+                <li><a href="/googleLogOut"> Logout </a></li>
                 <li><a href="/activiteiten"> Activiteiten </a></li>
-                <li><a href="/over"> Over</a></li>
             </ul>
         </nav>
-        <a class="cta" href="contact"><button>Contact</button></a>
+        <a class="cta" href="/contact"><button>Contact</button></a>
     </header>
     @yield('content')
 </body>

@@ -168,3 +168,12 @@ button:hover {
 .center-facebook {
     margin-left: 35%;
 }
+
+.login-btn {
+    background-color: rgb(116, 142, 58);
+    border-radius: 5px 5px 5px 5px ;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
