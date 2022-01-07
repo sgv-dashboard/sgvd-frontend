@@ -46,7 +46,6 @@
             <p1 id="samenvatting"> </p1>
         </div>
     </div>
-    <script type="text/javascript" src="https://stevenlevithan.com/assets/misc/date.format.js"></script>
     <script type="text/javascript" src="js/activities.js"></script>
 </div>
 @endsection
