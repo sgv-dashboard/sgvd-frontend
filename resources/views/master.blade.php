@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="/style.css" />
 
 <head>
     <meta charset="UTF-8">
-    <title>Scouts en Gidsen Vlaanderen @yield('subtitle')</title>
+    <title>Scouts en Gidsen Vlaanderen Dashboard@yield('subtitle')</title>
     @yield('javascipt')
 </head>
 
