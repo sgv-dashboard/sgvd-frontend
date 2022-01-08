@@ -195,3 +195,36 @@ input[type=checkbox] {
     margin-left: 30px;
     margin-top: 15px;
 }
+
+.admin-section {
+    background-color: rgb(116, 142, 58);
+    border-radius: 5px 5px 5px 5px ;
+    padding: 12px 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.add-activity-form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+}
+
+.inspringen{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.activity-inputs {
+    height: 1cm;
+    width: 8cm;
+    border-radius: 5px 5px 5px 5px ;
+    margin: 5px;
+}
+
+.activity-inputs-discription {
+    height: 1cm;
+    width: 16cm;
+    border-radius: 5px 5px 5px 5px ;
+    margin: 5px;
+}
