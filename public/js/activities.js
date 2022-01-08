@@ -92,7 +92,25 @@ function loadActivityList() {
         .catch(err => console.error(err));
 }
 
+/**************************************************************
+*                    Save new activities                      *
+***************************************************************/
 
+/*
+* Deze functie is nog niet helemaal af!!
+*/
+function saveActivities(){
+    var name = document.getElementById("Name").value;
+    var date = document.getElementById("Date").value;
+    var time = document.getElementById("Time").value;
+    var tak  = document.getElementById("tak").value;
+    var city = document.getElementById("City").value;
+    var street = document.getElementById("Street").value;
+    var number = document.getElementById("Number").value;
+    var discription = document.getElementById("Discription").value;
+
+    console.log(getCoordinates(city, street, number));
+}
 
 /**************************************************************
 *                    Detailed activity info                   *
@@ -190,4 +208,21 @@ function updateWeatherData(lat, lon) {
         .catch(err => alert(err));
 
     return true;
+}
+
+//REST: GET request to get the coordinates of the location 
+/*
+*Deze funtie is nog niet helemaal af!!
+*/
+function getCoordinates(city, street, number) {
+    coordinates = [];
+    url = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62484b7bc6e27b5b47fabce3821209f35d73&text="+city+"%20"+street+"%20"+number+"&boundary.country=BEL";
+    const response = await fetch(url).catch(err => alert(err));
+
+    console.log(respons);
+    const json = await response.json();
+
+    coordinates = json["features"][0]["geometry"]["coordinates"]
+
+    return coordinates;
 }

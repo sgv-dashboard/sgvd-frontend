@@ -9,9 +9,9 @@
         <h1 style = "color:white;" > Hieronder kan je activiteiten toevoegen </h1>
     </div>
     <div class="add-activity-form inspringen">
-        <input class="activity-inputs" type="text" name="Name" placeholder="Naam activiteit" required></input>
-        <input class="activity-inputs" type="date" name="Date" placeholder="Datum" required></input>
-        <input class="activity-inputs" type="time" name="Time" placeholder="Tijd" required></input>
+        <input class="activity-inputs" type="text" id="Name" placeholder=" Naam activiteit" required></input>
+        <input class="activity-inputs" type="date" id="Date" placeholder=" Datum" required></input>
+        <input class="activity-inputs" type="time" id="Time" placeholder=" Tijd" required></input>
         <select class="activity-inputs" name="tak" id="tak">
             <option disabled="disabled" selected="true" >Selecteer een tak</option>
             <option value="Kapoenen">Kapoenen</option>
@@ -23,8 +23,11 @@
             <option value="Groepsleiding">Groepsleiding</option>
             <option value="Stam">Stam</option>
         </select>
-        <input class="activity-inputs-discription" type="text" name="Discription" placeholder="Beschrijving" required></input>
-        <button type="submit"> Opslaan </button>
+        <input class="activity-inputs" type="text" id="City" placeholder=" Stad" required></input>
+        <input class="activity-inputs" type="text" id="Street" placeholder=" Straat" required></input>
+        <input class="activity-inputs" type="text" id="Number" placeholder=" Huisnummer" required></input>
+        <input class="activity-inputs-discription" type="text" id="Discription" placeholder=" Beschrijving" required></input>
+        <button onclick="saveActivities()"> Opslaan </button>
     </div>
 
     <div class="admin-section">
@@ -49,6 +52,7 @@
 
     </div>
     <script type="text/javascript" src="js/users.js"></script>
+    <script type="text/javascript" src="js/activities.js"></script>
 </div>
 
 @endsection
