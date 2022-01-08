@@ -24,6 +24,8 @@ class User extends Authenticatable
         'password',
         'google_id',
         'facebook_id',
+        'verified',
+        'admin',
     ];
 
     /**
@@ -44,4 +46,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isVerified() {
+        return parent::__get('verified');
+    }
+
+    public function isAdmin(){
+        return parent::__get('admin');
+    }
 }
