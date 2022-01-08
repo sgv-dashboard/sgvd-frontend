@@ -34,5 +34,5 @@ Route::get('/facebookLogin', [facebookController::class, 'loginWithFacebook']);
 Route::get('/facebookLogin/redirect', [facebookController::class, 'redirectFromFacebook']);
 Route::get('/facebookLogOut', [facebookController::class, 'logOut']);
 
-//Route::get('/ajaxRequest', [UserController::class, 'ajaxRequest']);
-Route::post('/test', [UserController::class, 'ajaxRequestPost']);
+Route::get('/updateDb/{id}/{admin}/{verified}', [UserController::class, 'updateDb']);
+

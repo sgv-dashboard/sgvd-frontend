@@ -17,26 +17,15 @@ class UserController extends Controller
     }
 
     public function updateUser($user){
-        dd($user);
-    }
-
-
-
-
-
-    public function ajaxRequest()
-    {
-        console.log("Dit werkt!! (ajaxRequest)");
-        return view('ajaxRequest');
+        //dd($user);
     }
      
-    public function ajaxRequestPost(Request $request)
+    public function updateDb($id, $new_admin, $new_verified)
     {
-        console.log("Dit werkt ook!! (ajaxRequestPost)");
-        $input = $request->all();
-          
-        Log::info($input);
-     
-        return response()->json(['success'=>'Got Simple Ajax Request.']);
+        User::where("id", $id)->update(['admin' => $new_admin]);
+        User::where("id", $id)->update(['verified' => $new_verified]);  
+
+        return "Done";
     }
 }
+

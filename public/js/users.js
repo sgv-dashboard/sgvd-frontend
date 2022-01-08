@@ -67,40 +67,30 @@ function loadUsers() {
         })
         .catch(err => console.error(err));
 }
-/*
-function updateUser(user){
-    tekst = "Test Siemen";
-    aantal = 132;
 
-    let content = {tekst: tekst, aantal: aantal};
-    fetch("http://localhost:88/demoRESTjsonPOST.php", {
-        method: "post",
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify(content)  
-    })
-            .then(response => response.json())
-            .then(json => json.uitkomst)
-            .then(setStatus)
-            .catch(err => alert(err));
-
-    document.getElementById("aantal").style.backgroundColor = null;
-    return true;
-}
-*/
 function updateUser(user){
-    $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    /*
+    var url = "http://localhost:8000/test/5";
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify({
+        id: user.id,
+        data: "123",
+    }));
+    */
+
+    //Volgens mij is dit niet de methode die Kris wil maar het werkt wel...
+    var url = "http://localhost:8000/updateDb/" + user.id + "/" + user.admin + "/" + user.verified;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        // Typical action to be performed when the document is ready:
+            //document.getElementById("demo").innerHTML = 
+            console.log(xhttp.responseText);
         }
-      });
-    let content = {some: 'siemen'};
-
-    // The actual fetch request
-    fetch('/test', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(content)
-    })
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
 }
