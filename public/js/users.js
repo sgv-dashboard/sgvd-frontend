@@ -67,7 +67,40 @@ function loadUsers() {
         })
         .catch(err => console.error(err));
 }
-
+/*
 function updateUser(user){
-    
+    tekst = "Test Siemen";
+    aantal = 132;
+
+    let content = {tekst: tekst, aantal: aantal};
+    fetch("http://localhost:88/demoRESTjsonPOST.php", {
+        method: "post",
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify(content)  
+    })
+            .then(response => response.json())
+            .then(json => json.uitkomst)
+            .then(setStatus)
+            .catch(err => alert(err));
+
+    document.getElementById("aantal").style.backgroundColor = null;
+    return true;
+}
+*/
+function updateUser(user){
+    $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+    let content = {some: 'siemen'};
+
+    // The actual fetch request
+    fetch('/test', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(content)
+    })
 }
