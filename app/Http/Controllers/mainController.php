@@ -8,7 +8,6 @@ use App\Models\User;
 
 use Artisaninweb\SoapWrapper\SoapWrapper;
 use App\SOAP\GetLyricRequest;
-//use Illuminate\Support\Facades\Auth;
 
 use Auth;
 use Hash;
@@ -54,5 +53,9 @@ class mainController extends controller{
 
     public function thankyou(){
         return view('thankyou');
+    }
+
+    public function admin(){
+        return view('admin');
     }
 }

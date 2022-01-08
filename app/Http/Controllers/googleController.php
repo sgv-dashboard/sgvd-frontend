@@ -58,11 +58,28 @@ class googleController extends controller{
             //Zoek de gebruiker in de databank
             $is_user = User::where('email', $user->getEmail())->first();
 
-
+            //De user bestaat niet in de databank: maak nieuwe maar niet verified
             if(!$is_user){
+                $saveUser = User::updateOrCreate([
+                    'google_id' => $user->getId(),
+                ],[
+                    'name' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'verified' => '0',
+                    'admin' => '0',
+                    'password' => Hash::make($user->getName().'@'.$user->getId())
+                ]);
+                
+                /*
+                * Hier zou nog een popup message moeten komen zodat de user
+                * weet dat hij een aanvraag tot verificatie heeft ingediend.
+                */
+
                 return redirect('/start');                
-            }else{
-                //Enkel verified users mogen inloggen
+            }
+            //De user bestaat wel: check verified
+            else{
+                //User verified
                 if($is_user->isVerified()){
                     $saveUser = User::where('email',  $user->getEmail())->update([
                         'google_id' => $user->getId(),
@@ -73,7 +90,12 @@ class googleController extends controller{
 
                     return redirect('/start');
                 }
+                //User nog niet verified
                 else {
+                    /*
+                    * Hier zou nog een popup message moeten komen zodat 
+                    * de user weet dat hij nog niet verified is.
+                    */
                     return redirect('/start');
                 }
             }
