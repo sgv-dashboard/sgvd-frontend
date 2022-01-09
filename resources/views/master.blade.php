@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scouts en Gidsen Vlaanderen Dashboard@yield('subtitle')</title>
     @yield('javascipt')
 </head>
@@ -17,6 +18,12 @@
                 <li><a href="/login"> Login </a></li>
                 <li><a href="/googleLogOut"> Logout </a></li>
                 <li><a href="/activiteiten"> Activiteiten </a></li>
+                @if(Auth::check())
+                    @if(auth()->user()->isAdmin())
+                        <li><a href="/registrations"> Inschrijvingen </a></li>
+                        <li><a href="/admin"> Admin </a></li>
+                    @endif
+                @endif
             </ul>
         </nav>
         <a class="cta" href="/contact"><button>Contact</button></a>

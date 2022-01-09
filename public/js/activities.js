@@ -92,8 +92,6 @@ function loadActivityList() {
         .catch(err => console.error(err));
 }
 
-
-
 /**************************************************************
 *                    Detailed activity info                   *
 ***************************************************************/
@@ -154,9 +152,9 @@ function updateActivityInfo(activity_json) {
     // Set fields
     var activity_dateTime = new Date(activity_json["dateTime"]);
     document.getElementById("activity-title").innerHTML = `Activiteit: ${activity_json["title"]}`;
-    document.getElementById("activity-date").innerHTML = `datum: ${activity_dateTime.toLocaleDateString('nl-BE')}`;
-    document.getElementById("activity-time").innerHTML = `tijd: ${activity_dateTime.toLocaleTimeString('nl-BE')}`;
-    document.getElementById("activity-group").innerHTML = `groep: ${activity_json["group"]}`;
+    document.getElementById("activity-date").innerHTML = `Datum: ${activity_dateTime.toLocaleDateString('nl-BE')}`;
+    document.getElementById("activity-time").innerHTML = `Tijd: ${activity_dateTime.toLocaleTimeString('nl-BE')}`;
+    document.getElementById("activity-group").innerHTML = `Groep: ${activity_json["group"]}`;
     document.getElementById("activity-description").innerHTML = `${activity_json["description"]}`;
 }
 
@@ -190,4 +188,96 @@ function updateWeatherData(lat, lon) {
         .catch(err => alert(err));
 
     return true;
+}
+
+//REST: GET request to get the coordinates of the location 
+async function getCoordinates(city, street, number) {
+    coordinates = [];
+    
+    url = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62484b7bc6e27b5b47fabce3821209f35d73&text="+city+"%20"+street+"%20"+number+"&boundary.country=BEL";
+    const response = await fetch(url);
+
+    const json = await response.json();
+
+    coordinates = json["features"][0]["geometry"]["coordinates"];
+
+    return coordinates;
+}
+
+/**************************************************************
+*                    Save new activities                      *
+***************************************************************/
+
+async function saveActivities(){
+    var name = document.getElementById("Name").value;
+    var date = document.getElementById("Date").value;
+    var time = document.getElementById("Time").value;
+    var tak  = document.getElementById("tak").value;
+    var city = document.getElementById("City").value;
+    var street = document.getElementById("Street").value;
+    var number = document.getElementById("Number").value;
+    var discription = document.getElementById("Discription").value;
+
+    const coordinates = getCoordinates(city, street, number);
+
+    console.log(coordinates);
+
+    /*
+    * Hier moet de nieuwe activity opgeslagen worden in de db.
+    */
+
+    //...
+}
+
+/**************************************************************
+*                    Register children                        *
+***************************************************************/
+
+function register(){
+    var register = document.getElementById("registration").checked;
+    if(register){
+        document.getElementById("registration-info").innerHTML = "Je bent ingeschreven voor deze activiteit!";
+    }
+    else {
+        document.getElementById("registration-info").innerHTML = "Je bent nog niet ingeschreven!";
+    }
+
+    console.log(register);
+
+    /*
+    * Hieronder moet de registratie naar de database.
+    */
+
+    //...
+
+}
+
+/**************************************************************
+*                    Search activities                        *
+***************************************************************/
+
+function searchActivities(){
+    var date = document.getElementById("searchDate").value;
+    var tak  = document.getElementById("searchTak").value;
+
+    console.log(date);
+    console.log(tak);
+
+    /*
+    * Zoek de activiteit in de db
+    */
+
+    //...
+
+    /*
+    * Vul de ingeschreven leden in in de tabel
+    */
+
+    //...
+
+    /*
+    * Geef wat info weer
+    */
+    document.getElementById("activityName").innerHTML = "Activiteit: Sinterklaas";
+    document.getElementById("numberRegistrations").innerHTML = "Aantal leden: 18";
 }
