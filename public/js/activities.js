@@ -152,9 +152,9 @@ function updateActivityInfo(activity_json) {
     // Set fields
     var activity_dateTime = new Date(activity_json["dateTime"]);
     document.getElementById("activity-title").innerHTML = `Activiteit: ${activity_json["title"]}`;
-    document.getElementById("activity-date").innerHTML = `datum: ${activity_dateTime.toLocaleDateString('nl-BE')}`;
-    document.getElementById("activity-time").innerHTML = `tijd: ${activity_dateTime.toLocaleTimeString('nl-BE')}`;
-    document.getElementById("activity-group").innerHTML = `groep: ${activity_json["group"]}`;
+    document.getElementById("activity-date").innerHTML = `Datum: ${activity_dateTime.toLocaleDateString('nl-BE')}`;
+    document.getElementById("activity-time").innerHTML = `Tijd: ${activity_dateTime.toLocaleTimeString('nl-BE')}`;
+    document.getElementById("activity-group").innerHTML = `Groep: ${activity_json["group"]}`;
     document.getElementById("activity-description").innerHTML = `${activity_json["description"]}`;
 }
 
