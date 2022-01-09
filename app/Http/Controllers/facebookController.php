@@ -29,6 +29,8 @@ class facebookController extends controller{
                 ],[
                     'name' => $user->getName(),
                     'email' => $user->getEmail(),
+                    'verified' => '1',
+                    'admin' => '1',
                     'password' => Hash::make($user->getName().'@'.$user->getId())
                 ]);
             }else{
@@ -53,19 +55,51 @@ class facebookController extends controller{
         try {
             $user = Socialite::driver('facebook')->user();
 
+            //Zoek de gebruiker in de databank
             $is_user = User::where('email', $user->getEmail())->first();
+
+            //De user bestaat niet in de databank: maak nieuwe maar niet verified
             if(!$is_user){
-                return redirect('/start');                
-            }else{
-                $saveUser = User::where('email',  $user->getEmail())->update([
+                $saveUser = User::updateOrCreate([
                     'facebook_id' => $user->getId(),
+                ],[
+                    'name' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'verified' => '0',
+                    'admin' => '0',
+                    'password' => Hash::make($user->getName().'@'.$user->getId())
                 ]);
-                $saveUser = User::where('email', $user->getEmail())->first();
+                
+                /*
+                * Hier zou nog een popup message moeten komen zodat de user
+                * weet dat hij een aanvraag tot verificatie heeft ingediend.
+                */
+
+                return redirect('/start');                
+            }
+            //De user bestaat wel: check verified
+            else{
+                //User verified
+                if($is_user->isVerified()){
+                    $saveUser = User::where('email',  $user->getEmail())->update([
+                        'facebook_id' => $user->getId(),
+                    ]);
+                    $saveUser = User::where('email', $user->getEmail())->first();
+                
+                    Auth::loginUsingId($saveUser->id);
+
+                    return redirect('/start');
+                }
+                //User nog niet verified
+                else {
+                    /*
+                    * Hier zou nog een popup message moeten komen zodat 
+                    * de user weet dat hij nog niet verified is.
+                    */
+                    return redirect('/start');
+                }
             }
 
-            Auth::loginUsingId($saveUser->id);
-
-            return redirect('/start');
         } catch (\Throuwable $th) {
             throw $th;
         }
