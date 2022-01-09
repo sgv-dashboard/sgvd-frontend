@@ -116,6 +116,27 @@ async function saveActivities(){
 }
 
 /**************************************************************
+*                    Register children                        *
+***************************************************************/
+
+function register(){
+    var register = document.getElementById("registration").checked;
+    if(register){
+        document.getElementById("registration-info").innerHTML = "Je bent ingeschreven voor deze activiteit!";
+    }
+    else {
+        document.getElementById("registration-info").innerHTML = "Je bent nog niet ingeschreven!";
+    }
+
+    console.log(register);
+
+    /*
+    * Hieronder moet de registratie naar de database.
+    */
+
+}
+
+/**************************************************************
 *                    Detailed activity info                   *
 ***************************************************************/
 
@@ -216,11 +237,7 @@ function updateWeatherData(lat, lon) {
 //REST: GET request to get the coordinates of the location 
 async function getCoordinates(city, street, number) {
     coordinates = [];
-
-    city = "Beringen";
-    street = "Zavelstraat";
-    number = "5";
-
+    
     url = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62484b7bc6e27b5b47fabce3821209f35d73&text="+city+"%20"+street+"%20"+number+"&boundary.country=BEL";
     const response = await fetch(url);
 

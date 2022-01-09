@@ -8,11 +8,11 @@
     <div class="admin-section">
         <h1 style = "color:white;" > Hieronder kan je activiteiten toevoegen </h1>
     </div>
-    <div class="add-activity-form inspringen">
+    <form class="add-activity-form inspringen">
         <input class="activity-inputs" type="text" id="Name" placeholder=" Naam activiteit" required></input>
         <input class="activity-inputs" type="date" id="Date" placeholder=" Datum" required></input>
         <input class="activity-inputs" type="time" id="Time" placeholder=" Tijd" required></input>
-        <select class="activity-inputs" name="tak" id="tak">
+        <select class="activity-inputs" name="tak" id="tak" required>
             <option disabled="disabled" selected="true" >Selecteer een tak</option>
             <option value="Kapoenen">Kapoenen</option>
             <option value="Kawellen">Kawellen</option>
@@ -28,7 +28,7 @@
         <input class="activity-inputs" type="text" id="Number" placeholder=" Huisnummer" required></input>
         <input class="activity-inputs-discription" type="text" id="Discription" placeholder=" Beschrijving" required></input>
         <button onclick="saveActivities()"> Opslaan </button>
-    </div>
+    </form>
 
     <div class="admin-section">
         <h1 style = "color:white;" > Hieronder kan je rechten van leden aanpassen </h1>

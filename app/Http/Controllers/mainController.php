@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;  
 use App\Models\main;
 use App\Models\User;
 
 use Artisaninweb\SoapWrapper\SoapWrapper;
 use App\SOAP\GetLyricRequest;
+use Session;
 
 use Auth;
 use Hash;

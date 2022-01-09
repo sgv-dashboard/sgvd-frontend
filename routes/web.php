@@ -35,4 +35,3 @@ Route::get('/facebookLogin/redirect', [facebookController::class, 'redirectFromF
 Route::get('/facebookLogOut', [facebookController::class, 'logOut']);
 
 Route::get('/updateDb/{id}/{admin}/{verified}', [UserController::class, 'updateDb']);
-
