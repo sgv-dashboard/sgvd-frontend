@@ -1,5 +1,9 @@
 window.onload = loadUsers();
 
+/**************************************************************
+*                   Load users in admin page                  *
+***************************************************************/
+
 function loadUsers() {
     var origin = window.location.origin;
     fetch(`${origin}/api/admin/users`)
@@ -67,6 +71,10 @@ function loadUsers() {
         })
         .catch(err => console.error(err));
 }
+
+/**************************************************************
+*                        Update user rights                   *
+***************************************************************/
 
 function updateUser(user){
     /*

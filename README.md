@@ -14,11 +14,13 @@
 - Velden nieuwe activiteiten uitlezen + api om coordinaten op te vragen van service
 - Toggle switch inschrijvingen
 - Pagina met inschrijvingen
+- Merge naar master branch
 
 ### Wat moet er nog gebeuren:
 - Activities opslaan in de database (functie is gemaakt in activities.js met button onclick())
 - Inschrijven van kinderen in database (functie is gemaakt in activities.js met switch onchange())
 - Ingeschreven kinderen weergeven op de pagina inschrijvingen (functie is gemaakt in activities.js met button onclick())
+- Enkele popup messages (zie facebook- en googlecontroller)
 
 ### Wat werkt er niet:
 - Docker omgeving

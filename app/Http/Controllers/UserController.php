@@ -15,10 +15,6 @@ class UserController extends Controller
 
         return $users;
     }
-
-    public function updateUser($user){
-        //dd($user);
-    }
      
     public function updateDb($id, $new_admin, $new_verified)
     {
