@@ -193,8 +193,8 @@ function updateWeatherData(lat, lon) {
 //REST: GET request to get the coordinates of the location 
 async function getCoordinates(city, street, number) {
     coordinates = [];
-    
-    url = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62484b7bc6e27b5b47fabce3821209f35d73&text="+city+"%20"+street+"%20"+number+"&boundary.country=BEL";
+
+    url = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62484b7bc6e27b5b47fabce3821209f35d73&text=" + city + "%20" + street + "%20" + number + "&boundary.country=BEL";
     const response = await fetch(url);
 
     const json = await response.json();
@@ -208,24 +208,55 @@ async function getCoordinates(city, street, number) {
 *                    Save new activities                      *
 ***************************************************************/
 
-async function saveActivities(){
-    var name = document.getElementById("Name").value;
-    var date = document.getElementById("Date").value;
-    var time = document.getElementById("Time").value;
-    var tak  = document.getElementById("tak").value;
-    var city = document.getElementById("City").value;
-    var street = document.getElementById("Street").value;
-    var number = document.getElementById("Number").value;
-    var discription = document.getElementById("Discription").value;
+async function saveActivities() {
+    const city = document.getElementById("City").value;
+    const street = document.getElementById("Street").value;
+    const number = document.getElementById("Number").value;
+    const coordinates = await getCoordinates(city, street, number);
+    //51.026940N, 5.237410E
+    const coordinate_str = `${coordinates[1]}N, ${coordinates[0]}E`.toString();
+    console.log(coordinate_str);
 
-    const coordinates = getCoordinates(city, street, number);
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const dateTime = date + 'T' + time + ":00";
+    console.log(dateTime);
 
-    console.log(coordinates);
+    const activity = {
+        title: document.getElementById("title").value,
+        dateTime: dateTime,
+        group: document.getElementById("tak").value.toLowerCase(),
+        description: document.getElementById("Discription").value,
+        location: coordinate_str,
+    }
 
+
+    // Post new activity to /api/activity
+    const origin = window.location.origin;
+    fetch(`${origin}/api/activity`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(activity)
+    }).then(alert("Activiteit opgeslagen")).catch(err => alert(err));
     /*
-    * Hier moet de nieuwe activity opgeslagen worden in de db.
-    */
+    // SOURCE: https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = `${origin}/api/activity`
+    for (const key in activity) {
+        hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = key;
+        hiddenField.value = activity[key];
 
+        form.appendChild(hiddenField);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+*/
     //...
 }
 
@@ -233,9 +264,9 @@ async function saveActivities(){
 *                    Register children                        *
 ***************************************************************/
 
-function register(){
+function register() {
     var register = document.getElementById("registration").checked;
-    if(register){
+    if (register) {
         document.getElementById("registration-info").innerHTML = "Je bent ingeschreven voor deze activiteit!";
     }
     else {
@@ -256,9 +287,9 @@ function register(){
 *                    Search activities                        *
 ***************************************************************/
 
-function searchActivities(){
+function searchActivities() {
     var date = document.getElementById("searchDate").value;
-    var tak  = document.getElementById("searchTak").value;
+    var tak = document.getElementById("searchTak").value;
 
     console.log(date);
     console.log(tak);

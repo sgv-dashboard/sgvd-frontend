@@ -50,4 +50,31 @@ class ActivityApiController extends Controller
         $activities = $db->getActivitiesSince(date("Y-m-d"));
         return $activities;
     }
+
+    /**
+     * Handle POST of new activity
+     */
+    public function createActivity(Request $request)
+    {
+        /*
+        $activity = array(
+            "title" => "Bosspel",
+            "location" => "51.03751N, 5.29919E",
+            "group" => "kawellen",
+            "description" => "Bosspel aan de dikke beuk",
+            "dateTime" => "2022-01-14T14:00:00",
+            "id" => null,
+        );*/
+        $activity = array(
+            'title' => $request->title,
+            'location' => $request->location,
+            'group' => $request->group,
+            'description' => $request->description,
+            'dateTime' => $request->dateTime,
+        );
+        $db = new ActivityDbProxy();
+        $response = $db->addActivity($activity);
+
+        return $response;
+    }
 }
