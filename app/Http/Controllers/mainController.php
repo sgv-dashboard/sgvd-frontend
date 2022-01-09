@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;  
 use App\Models\main;
 use App\Models\User;
 
 use Artisaninweb\SoapWrapper\SoapWrapper;
 use App\SOAP\GetLyricRequest;
-//use Illuminate\Support\Facades\Auth;
+use Session;
 
 use Auth;
 use Hash;
@@ -54,5 +55,23 @@ class mainController extends controller{
 
     public function thankyou(){
         return view('thankyou');
+    }
+
+    public function admin(){
+        if(Auth::check() && auth()->user()->admin == "1"){
+            return view('admin');
+        }
+        else {
+            return redirect('start');
+        }
+    }
+
+    public function registrations(){
+        if(Auth::check() && auth()->user()->admin == "1"){
+            return view('registrations');
+        }
+        else {
+            return redirect('start');
+        }
     }
 }

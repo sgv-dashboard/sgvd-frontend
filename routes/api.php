@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityApiController;
 use App\Http\Controllers\SunsetController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,7 @@ Route::get('/activity/{id}', [ActivityApiController::class, "getActivityFromId"]
 Route::get('/sun/sunset/{date}/{lat}/{lon}', [SunsetController::class, "getSunset"]);
 Route::get('/sun/sunrise/{date}/{lat}/{lon}', [SunsetController::class, "getSunrise"]);
 Route::get('/sun/day/{date}/{lat}/{lon}', [SunsetController::class, "isDay"]);
+
+// Users api
+Route::get('/admin/users', [UserController::class, "getUsers"]);
+

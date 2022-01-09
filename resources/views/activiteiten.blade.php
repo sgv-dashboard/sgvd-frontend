@@ -45,6 +45,14 @@
             <p1 id="windkmh"> </p1>
             <p1 id="samenvatting"> </p1>
         </div>
+        <div class="detailed-info">
+            <p> Inschrijven </p>
+            <label class="switch">
+                <input id="registration" type="checkbox" onchange="register()">
+                <span checked="false" class="slider round"></span>
+            </label>
+            <p1 id="registration-info"> </p1>
+        </div>
     </div>
     <script type="text/javascript" src="js/activities.js"></script>
 </div>
