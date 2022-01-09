@@ -11,12 +11,15 @@
 - Merge van de activiteiten database
 - Toevoeging van Admin en Verified in de database + enkel users met Admin krijgen het tab admin
 - Layout van de admin pagina: velden om activiteiten toe te voegen en tabel om rechten van users aan te passen aan de hand van een checkbox
-- Velden nieuwe activiteiten uitlezen + api om coordinaten op te vragen van service (werkt nog niet helemaal)
+- Velden nieuwe activiteiten uitlezen + api om coordinaten op te vragen van service
+- Toggle switch inschrijvingen
+
+### Wat moet er nog gebeuren:
+- Activities opslaan in de database (functie is gemaakt in activities.js met button onclick())
+- Inschrijven van kinderen in database (functie is gemaakt in activities.js met switch onchange())
 
 ### Wat werkt er niet:
 - Docker omgeving
-- Api om coordinaten op te vragen van service (werkt nog niet helemaal)
-- Admin en Verified enkel toegepast voor Google login, Facebook login moet nog gebeuren
 
 ### Gebruikte websites:
 - Routebeschrijving: https://openrouteservice.org/
