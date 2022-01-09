@@ -96,10 +96,7 @@ function loadActivityList() {
 *                    Save new activities                      *
 ***************************************************************/
 
-/*
-* Deze functie is nog niet helemaal af!!
-*/
-function saveActivities(){
+async function saveActivities(){
     var name = document.getElementById("Name").value;
     var date = document.getElementById("Date").value;
     var time = document.getElementById("Time").value;
@@ -109,7 +106,13 @@ function saveActivities(){
     var number = document.getElementById("Number").value;
     var discription = document.getElementById("Discription").value;
 
-    console.log(getCoordinates(city, street, number));
+    const coordinates = getCoordinates(city, street, number);
+
+    console.log(coordinates);
+
+    /*
+    * Hier moet de nieuwe activity opgeslagen worden in de db.
+    */
 }
 
 /**************************************************************
@@ -211,18 +214,19 @@ function updateWeatherData(lat, lon) {
 }
 
 //REST: GET request to get the coordinates of the location 
-/*
-*Deze funtie is nog niet helemaal af!!
-*/
-function getCoordinates(city, street, number) {
+async function getCoordinates(city, street, number) {
     coordinates = [];
-    url = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62484b7bc6e27b5b47fabce3821209f35d73&text="+city+"%20"+street+"%20"+number+"&boundary.country=BEL";
-    const response = await fetch(url).catch(err => alert(err));
 
-    console.log(respons);
+    city = "Beringen";
+    street = "Zavelstraat";
+    number = "5";
+
+    url = "https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62484b7bc6e27b5b47fabce3821209f35d73&text="+city+"%20"+street+"%20"+number+"&boundary.country=BEL";
+    const response = await fetch(url);
+
     const json = await response.json();
 
-    coordinates = json["features"][0]["geometry"]["coordinates"]
+    coordinates = json["features"][0]["geometry"]["coordinates"];
 
     return coordinates;
 }

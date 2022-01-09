@@ -56,6 +56,11 @@ class mainController extends controller{
     }
 
     public function admin(){
-        return view('admin');
+        if(Auth::check() && auth()->user()->admin == "1"){
+            return view('admin');
+        }
+        else {
+            return redirect('start');
+        }
     }
 }
