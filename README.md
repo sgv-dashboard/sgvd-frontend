@@ -11,7 +11,7 @@
 - Merge van de activiteiten database
 
 ### Wat werkt er niet:
-- Docker omgeving
+- Docker omgeving --> Gefixed: zie docker
 
 ### Gebruikte websites:
 - Routebeschrijving: https://openrouteservice.org/
@@ -37,3 +37,11 @@ Search for you php.ini file by executing 'php --init' in your terminal. Go to th
 - Vergeet de xampp niet op te zetten, database zou beschikbaar moeten zijn op localhost:88/phpmyadmin. Indien je een foutmelding krijg dat de database niet gevonden is maak je deze aan: 'sgv-dashboard' en voer je de migraties uit met 'php artisan migrate'.
 
 - Je bent ingelogd als je naam links boven staat. Indien je niet ingelogd geraakt ga je naar de googleController of facebookController en haal je de juiste functie uit comment.
+
+
+### Docker
+
+1. Activity container builden/runnen via vs-code task. 
+1. Controlleren of de naam van de gegenereerde image `sgvdactivitydb:latest` is. (moet slechts eenmalig normaal) 
+1. In [`docker-compose.yml`](docker-compose.yml) zorgen dat het hostPath van (db) volume van activitydb correct is (docker compose structuur is `hostPath:containerPath:ro`)
+1. `docker compose up` en alles zou moeten werken

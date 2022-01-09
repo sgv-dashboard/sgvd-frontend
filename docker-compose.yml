@@ -11,6 +11,11 @@ services:
       - MARIADB_DATABASE=sgv-dashboard
       - MARIADB_PASSWORD=qlsdfkjlmdqsr
 
+  activitydb:
+    image: sgvdactivitydb:latest
+    volumes:
+      - ../sgvd-activity-db/db:/db:rw
+
   laravel:
     tty: true
     image: docker.io/bitnami/laravel:8
