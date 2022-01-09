@@ -27,7 +27,7 @@
         <input class="activity-inputs" type="text" id="Street" placeholder=" Straat" required></input>
         <input class="activity-inputs" type="text" id="Number" placeholder=" Huisnummer" required></input>
         <input class="activity-inputs-discription" type="text" id="Discription" placeholder=" Beschrijving" required></input>
-        <button onclick="saveActivities()"> Opslaan </button>
+        <button type="button" onclick="saveActivities()"> Opslaan </button>
     </form>
 
     <div class="admin-section">

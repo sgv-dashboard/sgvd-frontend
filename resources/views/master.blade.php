@@ -20,6 +20,7 @@
                 <li><a href="/activiteiten"> Activiteiten </a></li>
                 @if(Auth::check())
                     @if(auth()->user()->isAdmin())
+                        <li><a href="/registrations"> Inschrijvingen </a></li>
                         <li><a href="/admin"> Admin </a></li>
                     @endif
                 @endif

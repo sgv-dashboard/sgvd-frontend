@@ -13,10 +13,12 @@
 - Layout van de admin pagina: velden om activiteiten toe te voegen en tabel om rechten van users aan te passen aan de hand van een checkbox
 - Velden nieuwe activiteiten uitlezen + api om coordinaten op te vragen van service
 - Toggle switch inschrijvingen
+- Pagina met inschrijvingen
 
 ### Wat moet er nog gebeuren:
 - Activities opslaan in de database (functie is gemaakt in activities.js met button onclick())
 - Inschrijven van kinderen in database (functie is gemaakt in activities.js met switch onchange())
+- Ingeschreven kinderen weergeven op de pagina inschrijvingen (functie is gemaakt in activities.js met button onclick())
 
 ### Wat werkt er niet:
 - Docker omgeving

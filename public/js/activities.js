@@ -93,50 +93,6 @@ function loadActivityList() {
 }
 
 /**************************************************************
-*                    Save new activities                      *
-***************************************************************/
-
-async function saveActivities(){
-    var name = document.getElementById("Name").value;
-    var date = document.getElementById("Date").value;
-    var time = document.getElementById("Time").value;
-    var tak  = document.getElementById("tak").value;
-    var city = document.getElementById("City").value;
-    var street = document.getElementById("Street").value;
-    var number = document.getElementById("Number").value;
-    var discription = document.getElementById("Discription").value;
-
-    const coordinates = getCoordinates(city, street, number);
-
-    console.log(coordinates);
-
-    /*
-    * Hier moet de nieuwe activity opgeslagen worden in de db.
-    */
-}
-
-/**************************************************************
-*                    Register children                        *
-***************************************************************/
-
-function register(){
-    var register = document.getElementById("registration").checked;
-    if(register){
-        document.getElementById("registration-info").innerHTML = "Je bent ingeschreven voor deze activiteit!";
-    }
-    else {
-        document.getElementById("registration-info").innerHTML = "Je bent nog niet ingeschreven!";
-    }
-
-    console.log(register);
-
-    /*
-    * Hieronder moet de registratie naar de database.
-    */
-
-}
-
-/**************************************************************
 *                    Detailed activity info                   *
 ***************************************************************/
 
@@ -246,4 +202,82 @@ async function getCoordinates(city, street, number) {
     coordinates = json["features"][0]["geometry"]["coordinates"];
 
     return coordinates;
+}
+
+/**************************************************************
+*                    Save new activities                      *
+***************************************************************/
+
+async function saveActivities(){
+    var name = document.getElementById("Name").value;
+    var date = document.getElementById("Date").value;
+    var time = document.getElementById("Time").value;
+    var tak  = document.getElementById("tak").value;
+    var city = document.getElementById("City").value;
+    var street = document.getElementById("Street").value;
+    var number = document.getElementById("Number").value;
+    var discription = document.getElementById("Discription").value;
+
+    const coordinates = getCoordinates(city, street, number);
+
+    console.log(coordinates);
+
+    /*
+    * Hier moet de nieuwe activity opgeslagen worden in de db.
+    */
+
+    //...
+}
+
+/**************************************************************
+*                    Register children                        *
+***************************************************************/
+
+function register(){
+    var register = document.getElementById("registration").checked;
+    if(register){
+        document.getElementById("registration-info").innerHTML = "Je bent ingeschreven voor deze activiteit!";
+    }
+    else {
+        document.getElementById("registration-info").innerHTML = "Je bent nog niet ingeschreven!";
+    }
+
+    console.log(register);
+
+    /*
+    * Hieronder moet de registratie naar de database.
+    */
+
+    //...
+
+}
+
+/**************************************************************
+*                    Search activities                        *
+***************************************************************/
+
+function searchActivities(){
+    var date = document.getElementById("searchDate").value;
+    var tak  = document.getElementById("searchTak").value;
+
+    console.log(date);
+    console.log(tak);
+
+    /*
+    * Zoek de activiteit in de db
+    */
+
+    //...
+
+    /*
+    * Vul de ingeschreven leden in in de tabel
+    */
+
+    //...
+
+    /*
+    * Geef wat info weer
+    */
+    document.getElementById("activityName").innerHTML = "Activiteit: Sinterklaas";
+    document.getElementById("numberRegistrations").innerHTML = "Aantal leden: 18";
 }

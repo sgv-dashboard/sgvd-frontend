@@ -23,6 +23,7 @@ Route::get('/start', [mainController::class, 'start']);
 Route::get('/login', [mainController::class, 'login']);
 Route::get('/activiteiten', [mainController::class, 'activiteiten']);
 Route::get('/admin', [mainController::class, 'admin']);
+Route::get('/registrations', [mainController::class, 'registrations']);
 Route::get('/contact', [mainController::class, 'contact']);
 Route::get('/thankyou', [mainController::class, 'thankyou']);
 

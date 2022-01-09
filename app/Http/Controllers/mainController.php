@@ -65,4 +65,13 @@ class mainController extends controller{
             return redirect('start');
         }
     }
+
+    public function registrations(){
+        if(Auth::check() && auth()->user()->admin == "1"){
+            return view('registrations');
+        }
+        else {
+            return redirect('start');
+        }
+    }
 }

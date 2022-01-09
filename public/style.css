@@ -290,3 +290,8 @@ input[type=checkbox] {
   .slider.round:before {
     border-radius: 50%;
   }
+
+.search-activity-info {
+    margin-left: 10px;
+    margin-right: 10px;
+}
