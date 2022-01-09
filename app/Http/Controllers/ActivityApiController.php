@@ -56,15 +56,6 @@ class ActivityApiController extends Controller
      */
     public function createActivity(Request $request)
     {
-        /*
-        $activity = array(
-            "title" => "Bosspel",
-            "location" => "51.03751N, 5.29919E",
-            "group" => "kawellen",
-            "description" => "Bosspel aan de dikke beuk",
-            "dateTime" => "2022-01-14T14:00:00",
-            "id" => null,
-        );*/
         $activity = array(
             'title' => $request->title,
             'location' => $request->location,
@@ -74,6 +65,17 @@ class ActivityApiController extends Controller
         );
         $db = new ActivityDbProxy();
         $response = $db->addActivity($activity);
+
+        return $response;
+    }
+
+    /**
+     * Handle DELETE of an activity
+     */
+    public function deleteActivity(Request $request)
+    {
+        $db = new ActivityDbProxy();
+        $response = $db->deleteActivity($request->id);
 
         return $response;
     }

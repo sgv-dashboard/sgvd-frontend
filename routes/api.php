@@ -26,6 +26,7 @@ Route::get('/activity', [ActivityApiController::class, "getActivities"]);
 Route::get('/activity/upcoming', [ActivityApiController::class, "getUpcomingActivities"]);
 Route::get('/activity/{id}', [ActivityApiController::class, "getActivityFromId"]);
 Route::post('/activity', [ActivityApiController::class, "createActivity"]);
+Route::delete('/activity/{id}', [ActivityApiController::class, "deleteActivity"]);
 
 // Sunset api
 Route::get('/sun/sunset/{date}/{lat}/{lon}', [SunsetController::class, "getSunset"]);
