@@ -18,11 +18,11 @@ class MapProxy extends Model
      */
     public function getMap($latS, $lonS, $latE, $lonE)
     {
-        $key = config('map_url.mapkey');
-        $baseUrl = config('map_url.map');
-
+        $key = config('url.mapkey');
+        $baseUrl = config('url.map');
+        //var_dump(sprintf('%s/map?key=%s&latS=%s&lonS=%s&latE=%s&lonE=%s', $baseUrl, $key, $latS, $lonS, $latE, $lonE));
         $response = file_get_contents(sprintf('%s/map?key=%s&latS=%s&lonS=%s&latE=%s&lonE=%s', $baseUrl, $key, $latS, $lonS, $latE, $lonE));
-        
+
         return json_decode($response);
     }
 }
