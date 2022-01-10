@@ -17,8 +17,9 @@ class SunsetProxy extends Model
      */
     public function getSunset($date, $lat, $lon)
     {
+        $key = config('url.sunkey');
         $baseUrl = config('url.sun');
-        $response = file_get_contents(sprintf('%s/sunset?lat=%s&lon=%s&date=%s', $baseUrl, $lat, $lon, $date)); // TODO: use api key
+        $response = file_get_contents(sprintf('%s/sunset?key=%s&lat=%s&lon=%s&date=%s', $baseUrl, $key, $lat, $lon, $date));
         return json_decode($response);
     }
 
@@ -33,8 +34,9 @@ class SunsetProxy extends Model
      */
     public function getSunrise($date, $lat, $lon)
     {
+        $key = config('url.sunkey');
         $baseUrl = config('url.sun');
-        $response = file_get_contents(sprintf('%s/sunrise?lat=%s&lon=%s&date=%s', $baseUrl, $lat, $lon, $date)); // TODO: use api key
+        $response = file_get_contents(sprintf('%s/sunrise?key=%s&lat=%s&lon=%s&date=%s', $baseUrl, $key, $lat, $lon, $date));
         return json_decode($response);
     }
 }

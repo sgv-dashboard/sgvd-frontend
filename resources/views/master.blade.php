@@ -19,16 +19,18 @@
                 <li><a href="/googleLogOut"> Logout </a></li>
                 <li><a href="/activiteiten"> Activiteiten </a></li>
                 @if(Auth::check())
-                    @if(auth()->user()->isAdmin())
-                        <li><a href="/registrations"> Inschrijvingen </a></li>
-                        <li><a href="/admin"> Admin </a></li>
-                    @endif
+                @if(auth()->user()->isAdmin())
+                <li><a href="/registrations"> Inschrijvingen </a></li>
+                <li><a href="/admin"> Admin </a></li>
+                @endif
                 @endif
             </ul>
         </nav>
         <a class="cta" href="/contact"><button>Contact</button></a>
     </header>
-    @yield('content')
+    <div class="main-background">
+        @yield('content')
+    </div>
 </body>
 
 </html>
