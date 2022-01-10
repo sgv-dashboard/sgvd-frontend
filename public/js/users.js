@@ -90,7 +90,8 @@ function updateUser(user){
     */
 
     //Volgens mij is dit niet de methode die Kris wil maar het werkt wel...
-    var url = "http://localhost:8000/updateDb/" + user.id + "/" + user.admin + "/" + user.verified;
+    var origin = window.location.origin;
+    var url = toString(origin) + "/updateDb/" + user.id + "/" + user.admin + "/" + user.verified;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

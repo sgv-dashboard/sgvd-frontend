@@ -22,5 +22,14 @@ class addStdAdminsToUsers extends Seeder
             'verified' => 1,
             'admin' => 1,
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Siemen Vandervoort',
+            'email' => 'siemen.vandervoort@student.uhasselt.be',
+            'password' => '$2y$10$CVYzJJD.eLQUdmOw2Xosou0l4hC9bVEzkgNmoVylpj7UPBmR/Y0FC',
+            'google_id' => '101425427774218065150',
+            'verified' => 1,
+            'admin' => 1,
+        ]);
     }
 }
