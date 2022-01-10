@@ -8,14 +8,19 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    /*
+    * Get all the users from the database
+    */
     public function getUsers()
     {
-        // Fetch from phpmyadmin
         $users = User::all();
 
         return $users;
     }
      
+    /*
+    * Update user rights
+    */
     public function updateDb($id, $new_admin, $new_verified)
     {
         User::where("id", $id)->update(['admin' => $new_admin]);

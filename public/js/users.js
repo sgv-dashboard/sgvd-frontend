@@ -11,7 +11,6 @@ function loadUsers() {
         .then(users_json => {
 
             users_json.forEach(user => {
-                // Create html elements
                 var parent = document.createElement("tr");
                 var user_name = document.createElement("td");
                 var user_email = document.createElement("td");
@@ -35,11 +34,9 @@ function loadUsers() {
                     user_admin.checked = false;
                 }
                 
-                // Fill elements
                 user_name.innerText = user.name;
                 user_email.innerText = user.email;
 
-                // Set onchange to update database
                 user_admin.onchange = function () {
                     if(user_admin.checked){
                         user.admin = "1";
@@ -62,7 +59,6 @@ function loadUsers() {
                     }
                 };
                 
-                // Update html
                 parent.append(user_name, user_verified, user_email, user_admin);
                 document.getElementById("user-list-table").append(parent);
             });
@@ -77,26 +73,11 @@ function loadUsers() {
 ***************************************************************/
 
 function updateUser(user){
-    /*
-    var url = "http://localhost:8000/test/5";
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify({
-        id: user.id,
-        data: "123",
-    }));
-    */
-
-    //Volgens mij is dit niet de methode die Kris wil maar het werkt wel...
     var origin = window.location.origin;
     var url = toString(origin) + "/updateDb/" + user.id + "/" + user.admin + "/" + user.verified;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        // Typical action to be performed when the document is ready:
-            //document.getElementById("demo").innerHTML = 
             console.log(xhttp.responseText);
         }
     };

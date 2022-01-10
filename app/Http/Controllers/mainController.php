@@ -18,7 +18,9 @@ use Str;
 
 class mainController extends controller{
  
-    
+    /*
+    * Return main view and display name when logged in
+    */
     public function start(){
         if(Auth::check()){
             $current_user = auth()->user();
@@ -31,6 +33,9 @@ class mainController extends controller{
         }
     }
 
+    /*
+    * Go to the login page when user is nog logged in yet
+    */
     public function login(){
         if(Auth::check()){
             return redirect('start');
@@ -40,6 +45,9 @@ class mainController extends controller{
         }
     }
 
+    /*
+    * Go to the activity page when the user is logged in
+    */
     public function activiteiten(){
         if (Auth::check()) {
             return view('activiteiten');
@@ -49,14 +57,23 @@ class mainController extends controller{
         }
     }
 
+    /*
+    * Go to the contact page
+    */
     public function contact(){
         return view('contact');
     }
 
+    /*
+    * Go to the thank you page
+    */
     public function thankyou(){
         return view('thankyou');
     }
 
+    /*
+    * Go to the admin page when the user is logged in and has admin rights
+    */
     public function admin(){
         if(Auth::check() && auth()->user()->admin == "1"){
             return view('admin');
@@ -66,6 +83,9 @@ class mainController extends controller{
         }
     }
 
+    /*
+    * Go to the registrations page when the user is logged in hand has admin rights
+    */
     public function registrations(){
         if(Auth::check() && auth()->user()->admin == "1"){
             return view('registrations');

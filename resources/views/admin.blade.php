@@ -50,7 +50,8 @@
     </div>
 
     <div class="admin-section">
-        <h1 style="color:white;"> Hieronder kan je rechten van leden aanpassen </h1>
+        <h1 style="color:white;"> Rechten van leden</h1>
+        <p> Verander de rechten van leden </p>
     </div>
     <div class="users-table">
         <table class="content-table">
