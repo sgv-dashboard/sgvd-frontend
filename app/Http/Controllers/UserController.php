@@ -15,13 +15,10 @@ class UserController extends Controller
 
         return $users;
     }
-     
-    public function updateDb($id, $new_admin, $new_verified)
-    {
-        User::where("id", $id)->update(['admin' => $new_admin]);
-        User::where("id", $id)->update(['verified' => $new_verified]);  
 
-        return "Done";
+    public function updateUser(Request $request)
+    {
+        User::where("id", $request->id)->update(['admin' => $request->admin]);
+        User::where("id", $request->id)->update(['verified' => $request->verified]);
     }
 }
-
