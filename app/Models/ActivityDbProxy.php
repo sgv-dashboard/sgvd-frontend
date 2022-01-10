@@ -56,6 +56,33 @@ class ActivityDbProxy extends Model
     }
 
     /**
+     * Add activity
+     */
+    public function addActivity($activity)
+    {
+        $client = $this->getSoapClient();
+
+        $params = array("a" => $activity);
+        $response = $client->__soapcall('addActivity', array($params));
+
+        return array("activity" => $response->addActivityResult);
+    }
+
+    /**
+     * Delete activity
+     */
+
+    public function deleteActivity($id)
+    {
+        $client = $this->getSoapClient();
+
+        $params = array("id" => $id);
+        $response = $client->__soapcall('deleteActivityFromId', array($params));
+
+        return array("activity" => $response->deleteActivityFromIdResult);
+    }
+
+    /**
      * Get the soap client
      * 
      * @return SoapClient
