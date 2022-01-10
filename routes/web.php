@@ -5,6 +5,7 @@ use App\Http\Controllers\mainController;
 use App\Http\Controllers\googleController;
 use App\Http\Controllers\facebookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegistrationApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,4 @@ Route::get('/facebookLogin/redirect', [facebookController::class, 'redirectFromF
 Route::get('/facebookLogOut', [facebookController::class, 'logOut']);
 
 //Route::get('/updateDb/{id}/{admin}/{verified}', [UserController::class, 'updateDb']);
+Route::get('api/register/activity/{id}/{status}', [RegistrationApiController::class, "registerForActivity"]); //FIXME: This api route is located here in order to be able to use the web authenticate middelware

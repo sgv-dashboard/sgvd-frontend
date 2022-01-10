@@ -151,6 +151,7 @@ function handleLocationUpdate(user_pos, activity_crd) {
 function updateActivityInfo(activity_json) {
     // Set fields
     var activity_dateTime = new Date(activity_json["dateTime"]);
+    document.getElementById("activity-id").innerHTML = activity_json["id"];
     document.getElementById("activity-title").innerHTML = `Activiteit: ${activity_json["title"]}`;
     document.getElementById("activity-date").innerHTML = `Datum: ${activity_dateTime.toLocaleDateString('nl-BE')}`;
     document.getElementById("activity-time").innerHTML = `Tijd: ${activity_dateTime.toLocaleTimeString('nl-BE')}`;
@@ -203,12 +204,20 @@ function register() {
         document.getElementById("registration-info").innerHTML = "Je bent nog niet ingeschreven!";
     }
 
-    console.log(register);
-
     /*
     * Hieronder moet de registratie naar de database.
     */
-
-    //...
-
+    var origin = window.location.origin;
+    var activityId = document.getElementById("activity-id").innerText;
+    var status = (register) ? 1 : 0;
+    console.log(activityId);
+    fetch(`${origin}/api/register/activity/${activityId}/${status}`, {
+        headers: {
+            'Accept': 'application/json',
+        },
+        credentials: 'same-origin'
+    })
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => alert(err));
 }

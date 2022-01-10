@@ -22,6 +22,7 @@
     </div>
     <div class="activity-info">
         <div class="detailed-info">
+            <p hidden id="activity-id" />
             <p class="activity-title" id="activity-title" />
             <p class="activity-date" id="activity-date" />
             <div style="display:flex; flex-direction: row;">

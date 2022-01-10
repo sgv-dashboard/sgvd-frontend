@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityApiController;
+use App\Http\Controllers\mainController;
 use App\Http\Controllers\RegistrationApiController;
 use App\Http\Controllers\SunsetController;
 use App\Http\Controllers\UserController;
@@ -17,10 +18,6 @@ use App\Http\Controllers\UserController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 // Activity db
 Route::get('/activity', [ActivityApiController::class, "getActivities"]);
@@ -40,3 +37,4 @@ Route::post('/admin/users/update', [UserController::class, 'updateUser']);
 
 // Registrations
 Route::get('/registrations/activity/{id}', [RegistrationApiController::class, "getUsersForActivity"]);
+//Route::get('/register/activity/{Id}', [RegistrationApiController::class, "registerForActivity"]);
