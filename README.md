@@ -1,9 +1,42 @@
+## Activiteiten dashboard voor Scouts & Gidsen Vlaanderen
 
+### Functies:
+- Laat leden inloggen via Google of Facebook
+- Toon de komende activiteiten met extra info:
+    * Titel 
+    * Datum
+    * Startuur
+    * Tak
+    * Extra beschrijving
+    * Licht of donker bij het einde van de activiteit
+    * Route beschrijving naar de activiteit
+    * Weerbericht
+- Rechten admins:
+    * Activiteiten toevoegen
+    * Activiteiten verwijderen
+    * Leden toegang geven
+    * Inschrijvingen per dag en tak bekijken
 
+### Opstarten
+- `docker compose up`
+- Ga naar `http://localhost:3000/start`
+
+___
+
+### Info voor ontwikkelaars
+- Laravel framework met PHP en Javascript
+- MariaDB voor activiteiten en gebruikers
+- Docker
+
+### Contact
+Masterstudenten Industriële Wetenschappen Elektronica-ICT (UHasselt)
+- lowie.deferme@student.uhasselt.be
+- siemen.vandervoort@student.uhasselt.be
 
 
 ___
 
+# Oude readme
 ### Nieuwe functies:
 - Layout van de verschillende pagina's
 - Knoppen met routes naar de controller en view
