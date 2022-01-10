@@ -17,7 +17,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/start', [mainController::class, 'start']);
 Route::get('/login', [mainController::class, 'login']);
@@ -35,4 +37,4 @@ Route::get('/facebookLogin', [facebookController::class, 'loginWithFacebook']);
 Route::get('/facebookLogin/redirect', [facebookController::class, 'redirectFromFacebook']);
 Route::get('/facebookLogOut', [facebookController::class, 'logOut']);
 
-Route::get('/updateDb/{id}/{admin}/{verified}', [UserController::class, 'updateDb']);
+//Route::get('/updateDb/{id}/{admin}/{verified}', [UserController::class, 'updateDb']);

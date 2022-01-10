@@ -35,3 +35,4 @@ Route::get('/sun/day/{date}/{lat}/{lon}', [SunsetController::class, "isDay"]);
 
 // Users api
 Route::get('/admin/users', [UserController::class, "getUsers"]);
+Route::post('/admin/users/update', [UserController::class, 'updateUser']);
