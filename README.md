@@ -25,13 +25,21 @@ ___
 
 ### Info voor ontwikkelaars
 - Laravel framework met PHP en Javascript
-- MariaDB voor activiteiten en gebruikers
+- Socialate SSO
+- MariaDB voor gebruikers
+- SOAP database voor activiteiten (C#)
 - Docker
+- API's
+    * Routebeschrijving: https://openrouteservice.org/
+    * Weerbericht: http://weerlive.nl/delen.php
+    * Contact via e-mail: https://formsubmit.co/
 
 ### Contact
 Masterstudenten Industriële Wetenschappen Elektronica-ICT (UHasselt)
 - lowie.deferme@student.uhasselt.be
 - siemen.vandervoort@student.uhasselt.be
+
+
 
 
 ___
