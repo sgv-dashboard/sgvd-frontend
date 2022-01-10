@@ -40,3 +40,4 @@ Route::get('/facebookLogOut', [facebookController::class, 'logOut']);
 
 //Route::get('/updateDb/{id}/{admin}/{verified}', [UserController::class, 'updateDb']);
 Route::get('api/register/activity/{id}/{status}', [RegistrationApiController::class, "registerForActivity"]); //FIXME: This api route is located here in order to be able to use the web authenticate middelware
+Route::get('api/register/activity/{id}', [RegistrationApiController::class, "isRegisteredForActivity"]); //FIXME: This api route is located here in order to be able to use the web authenticate middelware

@@ -57,4 +57,26 @@ class RegistrationApiController extends Controller
             ), 403);
         }
     }
+
+    public function isRegisteredForActivity($activityId)
+    {
+        if (Auth::check()) {
+            $userId = auth()->user()->id;
+            $registrations = DB::table('registrations')->get()->where('userId', $userId)->where('activityId', $activityId);
+            //var_dump($registrations);
+            if ($registrations->isEmpty()) {
+                return array(
+                    'registered' => false,
+                );
+            } else {
+                return array(
+                    'registered' => true,
+                );
+            }
+        } else {
+            return Response(array(
+                'Error' => 'Not authorized',
+            ), 403);
+        }
+    }
 }

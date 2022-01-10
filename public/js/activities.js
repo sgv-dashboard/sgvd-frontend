@@ -157,6 +157,22 @@ function updateActivityInfo(activity_json) {
     document.getElementById("activity-time").innerHTML = `Tijd: ${activity_dateTime.toLocaleTimeString('nl-BE')}`;
     document.getElementById("activity-group").innerHTML = `Groep: ${activity_json["group"]}`;
     document.getElementById("activity-description").innerHTML = `${activity_json["description"]}`;
+
+    // Set registered
+    // URL: api/register/activity/{id}
+    var origin = window.location.origin;
+    fetch(`${origin}/api/register/activity/${activity_json["id"]}`, {
+        headers: {
+            'Accept': 'application/json',
+        },
+        credentials: 'same-origin'
+    })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            document.getElementById("registration").checked = response.registered;
+        })
+        .catch(err => alert(err));
 }
 
 //REST: GET request to get the map with the route 
