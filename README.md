@@ -1,3 +1,9 @@
+
+
+
+
+___
+
 ### Nieuwe functies:
 - Layout van de verschillende pagina's
 - Knoppen met routes naar de controller en view
