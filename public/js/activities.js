@@ -212,33 +212,3 @@ function register() {
     //...
 
 }
-
-/**************************************************************
-*                    Search activities                        *
-***************************************************************/
-
-function searchActivities() {
-    var date = document.getElementById("searchDate").value;
-    var tak = document.getElementById("searchTak").value;
-
-    console.log(date);
-    console.log(tak);
-
-    /*
-    * Zoek de activiteit in de db
-    */
-
-    //...
-
-    /*
-    * Vul de ingeschreven leden in in de tabel
-    */
-
-    //...
-
-    /*
-    * Geef wat info weer
-    */
-    document.getElementById("activityName").innerHTML = "Activiteit: Sinterklaas";
-    document.getElementById("numberRegistrations").innerHTML = "Aantal leden: 18";
-}

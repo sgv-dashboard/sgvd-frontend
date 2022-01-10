@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityApiController;
+use App\Http\Controllers\RegistrationApiController;
 use App\Http\Controllers\SunsetController;
 use App\Http\Controllers\UserController;
 
@@ -36,3 +37,6 @@ Route::get('/sun/day/{date}/{lat}/{lon}', [SunsetController::class, "isDay"]);
 // Users api
 Route::get('/admin/users', [UserController::class, "getUsers"]);
 Route::post('/admin/users/update', [UserController::class, 'updateUser']);
+
+// Registrations
+Route::get('/registrations/activity/{id}', [RegistrationApiController::class, "getUsersForActivity"]);
