@@ -33,12 +33,8 @@ function loadUsers() {
                 else {
                     user_admin.checked = false;
                 }
-<<<<<<< HEAD
-                
-=======
 
                 // Fill elements
->>>>>>> postUsers
                 user_name.innerText = user.name;
                 user_email.innerText = user.email;
 
@@ -63,12 +59,8 @@ function loadUsers() {
                         updateUser(user)
                     }
                 };
-<<<<<<< HEAD
-                
-=======
 
                 // Update html
->>>>>>> postUsers
                 parent.append(user_name, user_verified, user_email, user_admin);
                 document.getElementById("user-list-table").append(parent);
             });
@@ -82,11 +74,6 @@ function loadUsers() {
 *                        Update user rights                   *
 ***************************************************************/
 
-<<<<<<< HEAD
-function updateUser(user){
-    var origin = window.location.origin;
-    var url = toString(origin) + "/updateDb/" + user.id + "/" + user.admin + "/" + user.verified;
-=======
 function updateUser(user) {
     /*
     var url = "http://localhost:8000/test/5";
@@ -113,7 +100,6 @@ function updateUser(user) {
         .catch(err => alert(err));
     /*
     var url = "http://localhost:8000/updateDb/" + user.id + "/" + user.admin + "/" + user.verified;
->>>>>>> postUsers
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
