@@ -31,6 +31,9 @@ ___
 - Docker
 - API's
     * Routebeschrijving: https://openrouteservice.org/
+      API documentatie beschikbaar op: https://sgvd-maps.herokuapp.com/documentation
+    * Sunset/sunrise
+      API documentatie beschikbaar op: 
     * Weerbericht: http://weerlive.nl/delen.php
     * Contact via e-mail: https://formsubmit.co/
 
