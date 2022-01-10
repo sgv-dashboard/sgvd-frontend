@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityApiController;
 use App\Http\Controllers\SunsetController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MapApiController;
+use App\Http\Controllers\WeatherApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +38,9 @@ Route::get('/sun/day/{date}/{lat}/{lon}', [SunsetController::class, "isDay"]);
 // Users api
 Route::get('/admin/users', [UserController::class, "getUsers"]);
 Route::post('/admin/users/update', [UserController::class, 'updateUser']);
+
+// Map api
+Route::get('/map/{latS}/{lonS}/{latE}/{lonE}', [MapApiController::class, 'getMap']);
+
+// Weather api
+Route::get('/weather/{latS}/{lonS}', [WeatherApiController::class, 'getWeather']);
