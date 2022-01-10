@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="/style.css" />
+<link rel="icon" href="/images/logo.jpg">
 
 <head>
     <meta charset="UTF-8">

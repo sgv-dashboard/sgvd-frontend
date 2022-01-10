@@ -17,7 +17,7 @@ class WeatherApiController extends Controller
      */
     public function getWeather($lat, $lon)
     {
-        $weahter = (new WeatherProxy())->getWeather($lat, $lon);
-        return $weahter;
+        $weather = (new WeatherProxy())->getWeather($lat, $lon);
+        return $weather;
     }
 }
