@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityApiController;
+use App\Http\Controllers\RegistrationApiController;
 use App\Http\Controllers\SunsetController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MapApiController;
@@ -44,3 +45,5 @@ Route::get('/map/{latS}/{lonS}/{latE}/{lonE}', [MapApiController::class, 'getMap
 
 // Weather api
 Route::get('/weather/{latS}/{lonS}', [WeatherApiController::class, 'getWeather']);
+// Registrations
+Route::get('/registrations/activity/{id}', [RegistrationApiController::class, "getUsersForActivity"]);
