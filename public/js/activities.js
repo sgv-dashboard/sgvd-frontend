@@ -177,12 +177,12 @@ function updateActivityInfo(activity_json) {
 
 //REST: GET request to get the map with the route 
 function updateMapAndData(latS, lonS, latE, lonE) {
-    fetch(`https://sgvd-maps.herokuapp.com/map?latS=${latS}&lonS=${lonS}&latE=${latE}&lonE=${lonE}`)
+    var origin = window.location.origin;
+    fetch(`${origin}/api/map/${latS}/${lonS}/${latE}/${lonE}`)
         .then(response => response.json())
         .then(json => {
             document.getElementById("duration").innerHTML = "De routebeschrijving duurt " + json["duration"] + " minuten.";
             document.getElementById("distance").innerHTML = "De activiteit is " + json["distance"] + " kilometer hier vandaan.";
-            //Het is nog niet gelukt om de kaart weer te geven.
             document.getElementById("map").srcdoc = json["html_map"];
         })
         .catch(err => alert(err));
@@ -190,9 +190,10 @@ function updateMapAndData(latS, lonS, latE, lonE) {
     return true;
 }
 
-//REST: GET weather data (using my API key: 06c8cc719b)
+//REST: GET weather data
 function updateWeatherData(lat, lon) {
-    fetch(`https://weerlive.nl/api/json-data-10min.php?key=06c8cc719b&locatie=${lat},${lon}`)
+    var origin = window.location.origin;
+    fetch(`${origin}/api/weather/${lat}/${lon}`)
         .then(response => response.json())
         .then(json => {
             json = json["liveweer"][0];

@@ -7,6 +7,8 @@ use App\Http\Controllers\mainController;
 use App\Http\Controllers\RegistrationApiController;
 use App\Http\Controllers\SunsetController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MapApiController;
+use App\Http\Controllers\WeatherApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,11 @@ Route::get('/sun/day/{date}/{lat}/{lon}', [SunsetController::class, "isDay"]);
 Route::get('/admin/users', [UserController::class, "getUsers"]);
 Route::post('/admin/users/update', [UserController::class, 'updateUser']);
 
+// Map api
+Route::get('/map/{latS}/{lonS}/{latE}/{lonE}', [MapApiController::class, 'getMap']);
+
+// Weather api
+Route::get('/weather/{latS}/{lonS}', [WeatherApiController::class, 'getWeather']);
 // Registrations
 Route::get('/registrations/activity/{id}', [RegistrationApiController::class, "getUsersForActivity"]);
 //Route::get('/register/activity/{Id}', [RegistrationApiController::class, "registerForActivity"]);

@@ -15,17 +15,17 @@
     * Activiteiten toevoegen
     * Activiteiten verwijderen
     * Leden toegang geven
-    * Inschrijvingen per dag en tak bekijken
+    * Inschrijvingen per activiteit bekijken
 
 ### Opstarten
-- `docker compose up`
+- `docker compose up` en in de laravel container `php artisan db:seed`
 - Ga naar `http://localhost:3000/start`
 
 ___
 
 ### Info voor ontwikkelaars
 - Laravel framework met PHP en Javascript
-- Socialate SSO
+- Socialite SSO
 - MariaDB voor gebruikers
 - SOAP database voor activiteiten (C#)
 - Docker
@@ -45,36 +45,11 @@ Masterstudenten Industriële Wetenschappen Elektronica-ICT (UHasselt)
 ___
 
 # Oude readme
-### Nieuwe functies:
-- Layout van de verschillende pagina's
-- Knoppen met routes naar de controller en view
-- Layout van de activiteiten pagina
-- Implementatie van routebeschrijving via Heroku
-- Implementatie van het weerbericht
-- Contact pagina
-- Facebook feed
-- Single Sign On Google + redirections
-- Single Sign On Facebook + redirections
-- Merge van de activiteiten database
-- Toevoeging van Admin en Verified in de database + enkel users met Admin krijgen het tab admin
-- Layout van de admin pagina: velden om activiteiten toe te voegen en tabel om rechten van users aan te passen aan de hand van een checkbox
-- Velden nieuwe activiteiten uitlezen + api om coordinaten op te vragen van service
-- Toggle switch inschrijvingen
-- Pagina met inschrijvingen
-- Merge naar master branch
 
 ### Wat moet er nog gebeuren:
 - Inschrijven van kinderen in database (functie is gemaakt in activities.js met switch onchange())
 - Ingeschreven kinderen weergeven op de pagina inschrijvingen (functie is gemaakt in activities.js met button onclick())
 - Enkele popup messages (zie facebook- en googlecontroller)
-
-### Wat werkt er niet:
-- Docker omgeving --> Gefixed: zie docker
-
-### Gebruikte websites:
-- Routebeschrijving: https://openrouteservice.org/
-- Weerbericht: http://weerlive.nl/delen.php
-- Contact e-mail: https://formsubmit.co/
 
 ### Testen:
 - php artisan serve (Docker compose up werkt bij mij niet meer)
