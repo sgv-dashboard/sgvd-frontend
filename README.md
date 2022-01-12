@@ -45,6 +45,6 @@ ___
 ### Docker troubleshooting
 
 1. Activity container builden/runnen via vs-code task. 
-1. Controlleren of de naam van de gegenereerde image `sgvdactivitydb:latest` is. (moet slechts eenmalig normaal) 
+1. Controleren of de naam van de gegenereerde image `sgvdactivitydb:latest` is. (moet slechts eenmalig normaal) 
 1. In [`docker-compose.yml`](docker-compose.yml) zorgen dat het hostPath van (db) volume van activitydb correct is (docker compose structuur is `hostPath:containerPath:ro`)
 1. `docker compose up` en alles zou moeten werken

@@ -16,6 +16,9 @@ services:
     volumes:
       - ../sgvd-activity-db/db:/db:rw
 
+  weather:
+    image: sgvdweather:latest
+
   laravel:
     tty: true
     image: docker.io/bitnami/laravel:8

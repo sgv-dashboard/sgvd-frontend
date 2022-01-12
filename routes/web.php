@@ -5,6 +5,7 @@ use App\Http\Controllers\mainController;
 use App\Http\Controllers\googleController;
 use App\Http\Controllers\facebookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WeatherApiController;
 
 /*
 |--------------------------------------------------------------------------

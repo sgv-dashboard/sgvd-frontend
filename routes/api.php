@@ -45,5 +45,9 @@ Route::get('/map/{latS}/{lonS}/{latE}/{lonE}', [MapApiController::class, 'getMap
 
 // Weather api
 Route::get('/weather/{latS}/{lonS}', [WeatherApiController::class, 'getWeather']);
+
+// Weather info
+Route::get('/weatherInfo/{temperature}/{rainChance}', [WeatherApiController::class, 'getInfo']);
+
 // Registrations
 Route::get('/registrations/activity/{id}', [RegistrationApiController::class, "getUsersForActivity"]);
