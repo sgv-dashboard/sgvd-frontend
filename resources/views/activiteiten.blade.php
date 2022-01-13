@@ -44,6 +44,7 @@
             <p1 id="windrichting"> </p1>
             <p1 id="windkmh"> </p1>
             <p1 id="samenvatting"> </p1>
+            <p1 id="extraInfo"> </p1>
         </div>
         <div class="detailed-info">
             <p> Inschrijven </p>

@@ -185,22 +185,16 @@ function updateWeatherData(lat, lon) {
             document.getElementById("windrichting").innerHTML = "De windrichting is " + json["windr"] + ".";
             document.getElementById("windkmh").innerHTML = "De windsnelheid is " + json["windkmh"] + " kilometer per uur.";
             document.getElementById("samenvatting").innerHTML = "Het totale weerbericht voor vandaag is: " + json["samenv"] + ".";
+
+            //SOAP: GET weather info
+            fetch(`${origin}/api/weatherInfo/${json["temp"]}/${json["d0neerslag"]}`)
+            .then(response => response.json())
+            .then(json => {
+                document.getElementById("extraInfo").innerHTML = json["getInfoResult"];
+            })
+            .catch(err => alert(err));
         })
         .catch(err => alert(err));
-
-    fetch(`${origin}/api/weatherInfo/15/85`)
-    .then(response => response.json())
-    .then(json => {
-        json = json["liveweer"][0];
-        document.getElementById("temperatuur").innerHTML = "Het is " + json["temp"] + " °C ";
-        document.getElementById("gevoelstemperatuur").innerHTML = "en de gevoelstemperatuur is " + json["gtemp"] + " °C.";
-        document.getElementById("windrichting").innerHTML = "De windrichting is " + json["windr"] + ".";
-        document.getElementById("windkmh").innerHTML = "De windsnelheid is " + json["windkmh"] + " kilometer per uur.";
-        document.getElementById("samenvatting").innerHTML = "Het totale weerbericht voor vandaag is: " + json["samenv"] + ".";
-    })
-    .catch(err => alert(err));
-
-
 
     return true;
 }

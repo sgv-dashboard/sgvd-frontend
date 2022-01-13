@@ -10,7 +10,7 @@ class WeatherProxy extends Model
 {
     use HasFactory;
 
-        /**
+    /**
      * Get the soap client
      * 
      * @return SoapClient
@@ -20,18 +20,21 @@ class WeatherProxy extends Model
         return new SoapClient(config('url.soapWeather'), array('cache_wsdl' => WSDL_CACHE_NONE));
     }
 
+    /**
+     * Get weather info
+     * 
+     * @param float $temperature
+     * @param int $rainChance
+     * 
+     * @return weather info
+     */
     public function getWeatherInfo($temperature, $rainChance){
         $client = $this->getSoapClient();
-        $params = array();
+
+        $params = array("temperature" => $temperature, "rainChance" => $rainChance);
         $response = $client->__soapcall('getInfo', array($params));
 
-
-        dd($response);
-
-        console.log("Hieronder zou het resultaat moeten staan:");
-        console.log(array("info" => $response->getInfoResult));
-
-        return "Done!";
+        return $response;
     }
 
     /**

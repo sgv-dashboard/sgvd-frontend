@@ -10,7 +10,7 @@
     * Extra beschrijving
     * Licht of donker bij het einde van de activiteit
     * Route beschrijving naar de activiteit
-    * Weerbericht
+    * Weerbericht met extra info
 - Rechten admins:
     * Activiteiten toevoegen
     * Activiteiten verwijderen
@@ -18,6 +18,7 @@
     * Inschrijvingen per activiteit bekijken
 
 ### Opstarten
+- (VOORLOPIG) SOAP service met weer info opstarten met `docker-build: release` task, daarna onderstaande commands.
 - `docker compose up` en in de laravel container `php artisan migrate:refresh` en `php artisan db:seed`
 - Ga naar `http://localhost:3000/start`
 ___
