@@ -26,6 +26,7 @@ Volgorde maakt niet uit
   │   ├── sgvd-frontend  
   │   ├── sgvd-sunset  
   │   ├── sgvd-weather  
+  │   ├── sgvd-maps  
 ```
 
 1. Commands
