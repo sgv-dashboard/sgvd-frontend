@@ -18,7 +18,7 @@
     * Inschrijvingen per activiteit bekijken
 
 ### Opstarten
-2. Zorg voor de juiste mappenstructuur via het clone van de andere repositories
+1. Zorg voor de juiste mappenstructuur via het clone van de andere repositories
 Volgorde maakt niet uit
 ```
   ├── rootfolder  
@@ -35,7 +35,7 @@ Volgorde maakt niet uit
 - Ga naar `http://localhost:3000/start`
 - De website zou zichtbaar moeten zijn.
 
-2. Afsluiten
+3. Afsluiten
 - `ctrl -c` om de containers te stoppen.
 ___
 
