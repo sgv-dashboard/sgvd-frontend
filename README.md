@@ -22,13 +22,9 @@
 Volgorde maakt niet uit
 
 ├── rootfolder  
-
 │   ├── sgvd-activity-db  
-
 │   ├── sgvd-frontend  
-
 │   ├── sgvd-sunset  
-
 │   ├── sgvd-weather  
 
 1. Commands
