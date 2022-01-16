@@ -19,14 +19,14 @@
 
 ### Opstarten
 1. Zorg voor de juiste mappenstructuur via het clonen van de andere repositories  
-Volgorde maakt niet uit
+Volgorde maakt niet uit, de mappen tussen haakjes zijn toegankelijk via Heroku.
 ```
   ├── rootfolder  
   │   ├── sgvd-activity-db  
   │   ├── sgvd-frontend  
-  │   ├── sgvd-sunset  
+  │   ├── (sgvd-sunset)  
   │   ├── sgvd-weather  
-  │   ├── sgvd-maps  
+  │   ├── (sgvd-maps)  
 ```
 
 2. Commands
