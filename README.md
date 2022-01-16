@@ -18,7 +18,7 @@
     * Inschrijvingen per activiteit bekijken
 
 ### Opstarten
-1. Zorg voor de juiste mappenstructuur via het clone van de andere repositories
+1. Zorg voor de juiste mappenstructuur via het clonen van de andere repositories  
 Volgorde maakt niet uit
 ```
   ├── rootfolder  
