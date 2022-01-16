@@ -90,5 +90,7 @@ class ActivityDbProxy extends Model
     private function getSoapClient()
     {
         return new SoapClient(config('url.soap'), array('cache_wsdl' => WSDL_CACHE_NONE));
+
+       
     }
 }
