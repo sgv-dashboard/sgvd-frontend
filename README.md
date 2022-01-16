@@ -18,7 +18,7 @@
     * Inschrijvingen per activiteit bekijken
 
 ### Opstarten
-1. Zorg voor de juiste mappenstructuur via het clone van de andere repositories
+2. Zorg voor de juiste mappenstructuur via het clone van de andere repositories
 Volgorde maakt niet uit
 ```
   ├── rootfolder  
@@ -29,13 +29,13 @@ Volgorde maakt niet uit
   │   ├── sgvd-maps  
 ```
 
-1. Commands
+2. Commands
 - SOAP service met weer info opstarten met `docker-build: release` task: in Visual Studio Code bij Terminal -> Run Task,  daarna onderstaande commands.
 - `docker compose up` en in de laravel container `php artisan migrate:refresh` en `php artisan db:seed`
 - Ga naar `http://localhost:3000/start`
 - De website zou zichtbaar moeten zijn.
 
-1. Afsluiten
+2. Afsluiten
 - `ctrl -c` om de containers te stoppen.
 ___
 
