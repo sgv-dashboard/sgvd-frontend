@@ -21,11 +21,15 @@
 1. Zorg voor de juiste mappenstructuur via het clone van de andere repositories
 Volgorde maakt niet uit
 
-├── rootfolder
-│   ├── sgvd-activity-db
-│   ├── sgvd-frontend
-│   ├── sgvd-sunset
-│   ├── sgvd-weather
+├── rootfolder  
+
+│   ├── sgvd-activity-db  
+
+│   ├── sgvd-frontend  
+
+│   ├── sgvd-sunset  
+
+│   ├── sgvd-weather  
 
 1. Commands
 - SOAP service met weer info opstarten met `docker-build: release` task: in Visual Studio Code bij Terminal -> Run Task,  daarna onderstaande commands.
