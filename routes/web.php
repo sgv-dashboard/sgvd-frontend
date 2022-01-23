@@ -37,5 +37,3 @@ Route::get('/googleLogOut', [googleController::class, 'logOut']);
 Route::get('/facebookLogin', [facebookController::class, 'loginWithFacebook']);
 Route::get('/facebookLogin/redirect', [facebookController::class, 'redirectFromFacebook']);
 Route::get('/facebookLogOut', [facebookController::class, 'logOut']);
-
-//Route::get('/updateDb/{id}/{admin}/{verified}', [UserController::class, 'updateDb']);

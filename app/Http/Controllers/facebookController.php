@@ -38,11 +38,6 @@ class facebookController extends controller{
                     'admin' => '0',
                     'password' => Hash::make($user->getName().'@'.$user->getId())
                 ]);
-                
-                /*
-                * Hier zou nog een popup message moeten komen zodat de user
-                * weet dat hij een aanvraag tot verificatie heeft ingediend.
-                */
 
                 return redirect('/start');                
             }
@@ -58,10 +53,6 @@ class facebookController extends controller{
                     return redirect('/start');
                 }
                 else {
-                    /*
-                    * Hier zou nog een popup message moeten komen zodat 
-                    * de user weet dat hij nog niet verified is.
-                    */
                     return redirect('/start');
                 }
             }

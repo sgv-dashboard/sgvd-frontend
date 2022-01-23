@@ -6,13 +6,6 @@ window.onload = loadActivityList();
 *                        Activity list                        *
 ***************************************************************/
 
-/*
-<tr>
-    <td>6/12/2021</td>
-    <td>Sinterklaas</td>
-</tr>
-*/
-
 function loadActivityList() {
     var origin = window.location.origin;
     fetch(`${origin}/api/activity/upcoming`)
@@ -213,11 +206,4 @@ function register() {
     }
 
     console.log(register);
-
-    /*
-    * Hieronder moet de registratie naar de database.
-    */
-
-    //...
-
 }

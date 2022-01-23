@@ -51,24 +51,6 @@ async function saveActivities() {
         .then(alert("Activiteit opgeslagen"))
         .then(loadActivityList())
         .catch(err => alert(err));
-    /*
-    // SOURCE: https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
-    const form = document.createElement('form');
-    form.method = 'post';
-    form.action = `${origin}/api/activity`
-    for (const key in activity) {
-        hiddenField = document.createElement('input');
-        hiddenField.type = 'hidden';
-        hiddenField.name = key;
-        hiddenField.value = activity[key];
-
-        form.appendChild(hiddenField);
-    }
-
-    document.body.appendChild(form);
-    form.submit();
-*/
-    //...
 }
 
 /**************************************************************

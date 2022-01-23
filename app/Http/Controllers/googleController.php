@@ -41,11 +41,6 @@ class googleController extends controller
                     'password' => Hash::make($user->getName() . '@' . $user->getId())
                 ]);
 
-                /*
-                * Hier zou nog een popup message moeten komen zodat de user
-                * weet dat hij een aanvraag tot verificatie heeft ingediend.
-                */
-
                 return redirect('/start');
             }
             else {
@@ -60,10 +55,6 @@ class googleController extends controller
                     return redirect('/start');
                 }
                 else {
-                    /*
-                    * Hier zou nog een popup message moeten komen zodat 
-                    * de user weet dat hij nog niet verified is.
-                    */
                     return redirect('/start');
                 }
             }

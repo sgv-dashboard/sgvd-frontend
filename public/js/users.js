@@ -75,19 +75,6 @@ function loadUsers() {
 ***************************************************************/
 
 function updateUser(user) {
-    /*
-    var url = "http://localhost:8000/test/5";
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify({
-        id: user.id,
-        data: "123",
-    }));
-    */
-
-    //Volgens mij is dit niet de methode die Kris wil maar het werkt wel...
     var origin = window.location.origin;
     fetch(`${origin}/api/admin/users/update`, {
         method: 'POST',
@@ -98,14 +85,4 @@ function updateUser(user) {
     })
         .then(alert("Veranderingen opgeslagen"))
         .catch(err => alert(err));
-    /*
-    var url = "http://localhost:8000/updateDb/" + user.id + "/" + user.admin + "/" + user.verified;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(xhttp.responseText);
-        }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();*/
 }
